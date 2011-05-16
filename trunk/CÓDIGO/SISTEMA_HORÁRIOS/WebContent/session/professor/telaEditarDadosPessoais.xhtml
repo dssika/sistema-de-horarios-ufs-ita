@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core">
+
+   
+      <ui:composition template="/template/template.xhtml">
+   	   	<ui:define name="content">
+   	   		<h1>Editar Dados Pessoais</h1>
+   	   		<h:form>
+				<h:panelGrid columns="2">
+					<h:outputText value="Nome: " />
+					<h:inputText value="" />
+					<h:outputText value="Matrícula: " />
+					<h:inputText value="" />
+					<h:outputText value="Telefone: " />
+					<h:inputText value="" />
+					<h:outputText value="E-mail: " />
+					<h:inputText value="" />
+					<h:outputText value="Área: " />
+					<h:selectOneMenu value="">				
+					</h:selectOneMenu >
+					<h:outputText value="Login: " />
+					<h:inputText value="" />
+					<h:outputText value="Senha: " />
+					<h:inputText value="" />					
+				</h:panelGrid>  
+				<br /> 	
+				<h:commandButton value="Confirmar Alteração"/>   		
+   	   		</h:form>
+   	   		
+   	   	</ui:define>
+   </ui:composition>
+   
+</html>
