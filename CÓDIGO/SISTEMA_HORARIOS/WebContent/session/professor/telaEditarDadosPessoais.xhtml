@@ -7,29 +7,35 @@
    
       <ui:composition template="/template/template.xhtml">
    	   	<ui:define name="content">
-   	   		<h1>Editar Dados Pessoais</h1>
-   	   		<h:form>
-				<h:panelGrid columns="2">
-					<h:outputText value="Nome: " />
-					<h:inputText value="" />
-					<h:outputText value="Matrícula: " />
-					<h:inputText value="" />
-					<h:outputText value="Telefone: " />
-					<h:inputText value="" />
-					<h:outputText value="E-mail: " />
-					<h:inputText value="" />
-					<h:outputText value="Área: " />
-					<h:selectOneMenu value="">				
-					</h:selectOneMenu >
-					<h:outputText value="Login: " />
-					<h:inputText value="" />
-					<h:outputText value="Senha: " />
-					<h:inputText value="" />					
-				</h:panelGrid>  
-				<br /> 	
-				<h:commandButton value="Confirmar Alteração"/>   		
-   	   		</h:form>
-   	   		
+   	   	<div class="article" >
+   	   	
+		<h2>Editar Dados Pessoais</h2>
+   	   	<br/>
+   	   	
+   	   	<!--Conteúdo Principal-->
+   		<h:form>
+			<h:panelGrid columns="2">
+				<h:outputText value="Nome: " />
+				<h:inputText value="#{manterProfessorBean.professor.nome}" />
+				<h:outputText value="Matrícula: " />
+				<h:inputText value="#{manterProfessorBean.professor.matricula}" />
+				<h:outputText value="Telefone: " />
+				<h:inputText value="#{manterProfessorBean.professor.telefone}" />
+				<h:outputText value="E-mail: " />
+				<h:inputText value="#{manterProfessorBean.professor.email}" />
+				<h:outputText value="Área: " />
+				<h:selectOneMenu value="#{manterProfessorBean.professor.area}">				
+				</h:selectOneMenu >		
+				<h:outputText value="Login: " />
+				<h:inputText value="#{manterProfessorBean.professor.login}" />
+				<h:outputText value="Senha: " />
+				<h:inputText value="#{manterProfessorBean.professor.senha}" />					
+			</h:panelGrid>  
+			<br /> 	
+			<h:commandButton value="Confirmar Alteração" action="#{manterProfessorBean.editar}"/>   		
+   		</h:form>
+   	   	
+   	   	</div>	
    	   	</ui:define>
    </ui:composition>
    

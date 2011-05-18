@@ -24,22 +24,22 @@ public class ManterDisciplinaBean {
 	private Disciplina disciplina = new Disciplina();
 	
 		
-	public void gravar(Disciplina disciplina) {
-		this.disciplina = disciplina; 
+	public String gravar() {
+		return "sucesso";
 	}
 	
-	public void excluir(Disciplina disciplina) {
-
+	public String excluir() {
+		return "sucesso";
 	}
 	
-	public void editar(Disciplina disciplina) {
-
-	}
-	
-	public String cadastraDisciplina(){
+	public String editar() {
 		return "sucesso";
 	}
 
+	public String voltarPagina(){
+		return "sucesso";
+	}
+	
 	public Disciplina getDisciplina() {
 		return disciplina;
 	}
@@ -47,4 +47,6 @@ public class ManterDisciplinaBean {
 	public void setDisciplina(Disciplina disciplina) {
 		this.disciplina = disciplina;
 	}
+	
+	
 }

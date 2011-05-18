@@ -6,24 +6,39 @@
 
          <ui:composition template="/template/template.xhtml">
    	   	<ui:define name="content">
-   	   		<h1>Excluir Professor</h1>
-   	   		<h:form>
-				<h:panelGrid columns="2">
-					<h:outputText value="Professor: " />
-					<h:selectOneMenu value="">				
-					</h:selectOneMenu >	
-					<h:outputText value="Nome: " />
-					<h:inputText value="" />
-					<h:outputText value="Matrícula: " />
-					<h:inputText value="" />
-								
-				</h:panelGrid>  
-				<br />	
-				<h:outputText value="Deseja realmente Excluir?" /><br/>
-				<h:commandButton value="SIM"/>  
-				<h:commandButton value="NÃO"/>   		
-   	   		</h:form>
+   	   	<div class="article" >
+   	   	
+   	   	<!--Barra de navegação da página-->
+   	   	<div class="ddoverlap">   	   		
+		<ul>
+		<li><a href="/SISTEMA_DE_HORARIOS/faces/session/professor/telaCadastrarProfessor.xhtml">Cadastrar</a></li>
+		<li class="selected"><a href="/SISTEMA_DE_HORARIOS/faces/session/professor/telaExcluirProfessor.xhtml">Excluir</a></li>
+		<li><a href="/SISTEMA_DE_HORARIOS/faces/session/professor/telaVisualizarDadosProfessor.xhtml">Visualizar Dados do Professor</a></li>
+		</ul> 
+		</div>	
+		<h2>Manter Professor</h2>
+   	   	<br/>
+   	   	
+   	   	<!--Conteúdo Principal-->
+   		<h3>Excluir Professor</h3>
+   		<h:form>
+   		<h:outputText value="Professor: " />
+		<h:selectOneMenu value="">				
+		</h:selectOneMenu >	
+			<h:panelGrid columns="2">				
+				<h:outputText value="Nome: " />
+				<h:outputText value="" />
+				<h:outputText value="Matrícula: " />
+				<h:outputText value="" />
+							
+			</h:panelGrid>  
+			<br />	
+			<h:outputText value="Deseja realmente Excluir?" /><br/>
+			<h:commandButton value="SIM" action="#{manterProfessorBean.excluir}"/>  
+			<h:commandButton value="NÃO" action="#{manterProfessorBean.voltarPagina}"/> 	
+   		</h:form>
    	   		
+   	   	</div>
    	   	</ui:define>
    </ui:composition>
    

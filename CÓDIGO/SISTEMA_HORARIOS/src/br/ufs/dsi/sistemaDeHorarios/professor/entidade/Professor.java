@@ -22,7 +22,7 @@ public class Professor {
 	private String area;
 	private String login;
 	private String senha;
-	private boolean cordenador;
+	private char coordenador;
 	
 	public Integer getMatricula() {
 		return matricula;
@@ -66,10 +66,12 @@ public class Professor {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public boolean isCordenador() {
-		return cordenador;
+	public char getCoordenador() {
+		return coordenador;
 	}
-	public void setCordenador(boolean cordenador) {
-		this.cordenador = cordenador;
+	public void setCoordenador(char coordenador) {
+		this.coordenador = coordenador;
 	}
+	
+	
 }
