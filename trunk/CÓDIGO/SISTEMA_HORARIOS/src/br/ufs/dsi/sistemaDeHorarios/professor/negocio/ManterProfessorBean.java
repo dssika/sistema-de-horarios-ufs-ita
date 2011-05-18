@@ -13,25 +13,36 @@
 
 package br.ufs.dsi.sistemaDeHorarios.professor.negocio;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
 import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 import br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor;
 
-
+@ManagedBean
+@SessionScoped
 public class ManterProfessorBean {
-	public void gravar(Professor professor) {
+	private Professor professor = new Professor();
+	
+	
+	public String gravar() {
+		return "sucesso";
+	}
+	
+	public String excluir() {
+		return "sucesso";
+	}
+	
+	public String editar() {
+		return "sucesso";
+	}
+	
+	public void visualizarDados() {
 	
 	}
 	
-	public void excluir(Professor professor) {
-	
-	}
-	
-	public void editar(Professor professor) {
-	
-	}
-	
-	public void visualizarDados( String nome) {
-	
+	public String voltarPagina(){
+		return "sucesso";
 	}
 	
 	public void gravarDisciplinaProfessor(Disciplina disciplina) {
@@ -40,5 +51,13 @@ public class ManterProfessorBean {
 	
 	public void visualizarDisciplinaProfessor(Disciplina disciplina) {
 	
+	}
+
+	public Professor getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
 	}
 }
