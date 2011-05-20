@@ -11,15 +11,16 @@
    	   	<!--Barra de navegação da página-->
    	   	<div class="ddoverlap">   	   		
 		<ul>
-		<li class="selected"><a href="/SISTEMA_DE_HORARIOS/faces/session/turma/telaFinalizarPeriodo.xhtml">Finalizar</a></li>
-		<li><a href="/SISTEMA_DE_HORARIOS/faces/session/turma/telaEditarPeriodo.xhtml">Editar</a></li>
+		<li><a href="/SISTEMA_DE_HORARIOS/faces/session/turma/telaFinalizarPeriodo.xhtml">Finalizar</a></li>
+		<li class="selected"><a href="/SISTEMA_DE_HORARIOS/faces/session/turma/telaEditarPeriodo.xhtml">Editar</a></li>
 		</ul> 
 		</div>	
 		<h2>Finalizar Período</h2>
    	   	<br/>
 
 		<h:form >	
-		<h3>Finalizar</h3>		
+		<h3>Confirmar edição do Período</h3>
+						
 			<h:dataTable value="#{visualizarHistoricoBean.listaTurma}" var="t" styleClass="dados" rowClasses="impar,par">
 				
 				<h:column>
@@ -44,33 +45,34 @@
 					<f:facet name="header">
 						<h:outputText value="Quantidade Alunos" />
 					</f:facet>
-					<h:inputText value="#{t.turma.quantidade_aluno}" />
+					<h:outputText value="#{t.turma.quantidade_aluno}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">
 						<h:outputText value="Total AP" />
 					</f:facet>
-					<h:inputText value="#{t.turma.total_aprovados}" />
+					<h:outputText value="#{t.turma.total_aprovados}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">
 						<h:outputText value="Total RF" />
 					</f:facet>
-					<h:inputText value="#{t.turma.total_reprovados_falta}" />
+					<h:outputText value="#{t.turma.total_reprovados_falta}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">
 						<h:outputText value="Total RM" />
 					</f:facet>
-					<h:inputText value="#{t.turma.total_reprovados_media}" />
+					<h:outputText value="#{t.turma.total_reprovados_media}" />
 				</h:column>
 			</h:dataTable>
-			
-				<br />
-		      <h:commandButton value="Finalizar Período" action="#{visualizarHistoricoBean.confirmar}" /><br/>
+
+		      <h:commandButton value="Confirmar" action="#{visualizarHistoricoBean.editar}" />
+		      <h:commandButton value="Voltar" action="#{visualizarHistoricoBean.voltarPagina}" /><br/>
 		      * AP - Aprovado<br/>
 		      * RF - Reprovado por falta<br/>
 		      * RF - Reprovado por média
+		     
 		</h:form>
 		
 	</div>	

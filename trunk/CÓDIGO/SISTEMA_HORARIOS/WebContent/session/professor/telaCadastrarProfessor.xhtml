@@ -20,9 +20,11 @@
    	   	<br/>
    	   	
    	   	<!--Conteúdo Principal-->
-   		<h3>Cadastrar Professor</h3>
    		<h:form>
 			<h:panelGrid columns="2">
+				<f:facet name="header">
+					<h:outputText value="Cadastrar Professor" />
+				</f:facet>
 				<h:outputText value="Nome: " />
 				<h:inputText value="#{manterProfessorBean.professor.nome}" />
 				<h:outputText value="Matrícula: " />

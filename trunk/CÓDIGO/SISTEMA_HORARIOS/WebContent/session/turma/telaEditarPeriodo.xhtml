@@ -21,7 +21,7 @@
 		<h:form >	
 		<h3>Editar Período</h3>
 		<h:outputText value="Selecionar Período: " />
-				<h:selectOneMenu value="">				
+				<h:selectOneMenu value="visualizarHistoricoBean.id_turma">				
 				</h:selectOneMenu >	
 						
 			<h:dataTable value="#{visualizarHistoricoBean.listaTurma}" var="t" styleClass="dados" rowClasses="impar,par">
@@ -48,31 +48,33 @@
 					<f:facet name="header">
 						<h:outputText value="Quantidade Alunos" />
 					</f:facet>
-					<h:outputText value="#{t.turma.quantidade_aluno}" />
+					<h:inputText value="#{t.turma.quantidade_aluno}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">
 						<h:outputText value="Total AP" />
 					</f:facet>
-					<h:outputText value="#{t.turma.total_aprovados}" />
+					<h:inputText value="#{t.turma.total_aprovados}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">
 						<h:outputText value="Total RF" />
 					</f:facet>
-					<h:outputText value="#{t.turma.total_reprovados_falta}" />
+					<h:inputText value="#{t.turma.total_reprovados_falta}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">
 						<h:outputText value="Total RM" />
 					</f:facet>
-					<h:outputText value="#{t.turma.total_reprovados_media}" />
+					<h:inputText value="#{t.turma.total_reprovados_media}" />
 				</h:column>
 			</h:dataTable>
-			
-				<br />
-		      <h:commandButton value="Registrar" action="#{visualizarHistoricoBean.finalizar}" />
-		      <br/>	
+
+		      <h:commandButton value="Alterar" action="#{visualizarHistoricoBean.confirmar}" /><br/>
+		      * AP - Aprovado<br/>
+		      * RF - Reprovado por falta<br/>
+		      * RF - Reprovado por média
+		     
 		</h:form>
 		
 	</div>	

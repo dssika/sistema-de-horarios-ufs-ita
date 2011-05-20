@@ -20,9 +20,11 @@
    	   	<br/>
    	   	
    	   	<!--Conteúdo Principal-->
-	   	<h3>Cadastrar Disciplina</h3>
 	   	<h:form>
 			<h:panelGrid columns="2">
+				<f:facet name="header">
+					<h:outputText value="Cadastrar Disciplina" />
+				</f:facet>
 				<h:outputText value="Código: " />
 				<h:inputText value="#{manterDisciplinaBean.disciplina.cod_disciplina}" />
 				<h:outputText value="Nome da Disciplina: " />

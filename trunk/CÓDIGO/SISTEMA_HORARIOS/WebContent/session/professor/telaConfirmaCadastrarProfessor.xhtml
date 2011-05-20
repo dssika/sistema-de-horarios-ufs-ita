@@ -20,9 +20,11 @@
    	   	<br/>
    	   	
    	   	<!--Conteúdo Principal-->
-   		<h3>Confirmar Cadastro de Professor</h3>
    		<h:form>
 			<h:panelGrid columns="2">
+				<f:facet name="header">
+					<h:outputText value="Confirmar Cadastro de Professor" />
+				</f:facet>	
 				<h:outputText value="Nome: " />
 				<h:outputText value="#{manterProfessorBean.professor.nome}" />
 				<h:outputText value="Matrícula: " />
@@ -36,7 +38,7 @@
 				<h:outputText value="É Coordenador?: " />
 				<h:outputText value="#{manterProfessorBean.professor.coordenador}" />
 			</h:panelGrid>  
-			<br /> 	
+			
 			<h:commandButton value="Confirmar" action="#{manterProfessorBean.gravar}"/> 
 			<h:commandButton value="Voltar" action="#{manterProfessorBean.voltarPagina}"/>   		
    		</h:form>
