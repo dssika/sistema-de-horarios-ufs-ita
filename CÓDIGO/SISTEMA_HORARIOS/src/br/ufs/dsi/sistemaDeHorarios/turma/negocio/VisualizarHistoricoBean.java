@@ -49,4 +49,16 @@ public class VisualizarHistoricoBean {
 	public String finalizar(){
 		return "sucesso";
 	}
+	
+	public String editar(){
+		return "sucesso";
+	}
+	
+	public String confirmar(){
+		return "sucesso";
+	}
+	
+	public String voltarPagina(){
+		return "sucesso";
+	}
 }

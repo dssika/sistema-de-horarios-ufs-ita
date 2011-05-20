@@ -20,19 +20,20 @@
    	   	<br/>
    	   	
    		<!--Conteúdo Principal-->
-   		<h3>Excluir Disciplina</h3>
    		<h:form>
    		<h:outputText value="Selecione uma Disciplina: " />
 		<h:selectOneMenu value="Selecione..">				
 		</h:selectOneMenu >
-			<h:panelGrid columns="2">				
+			<h:panelGrid columns="2">	
+				<f:facet name="header">
+					<h:outputText value="Excluir Disciplina" />
+				</f:facet>			
 				<h:outputText value="Código: " />
 				<h:outputText value="" />
 				<h:outputText value="Nome da Disciplina: " />
 				<h:outputText value="" />
 			</h:panelGrid>  
 			 
-			<br />	
 			<h:outputText value="Deseja realmente Excluir?" /><br/>
 			<h:commandButton value="SIM" action="#{manterDisciplinaBean.excluir}"/>  
 			<h:commandButton value="NÃO" action="#{manterDisciplinaBean.voltarPagina}"/>  		

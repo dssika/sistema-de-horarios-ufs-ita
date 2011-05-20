@@ -20,19 +20,20 @@
    	   	<br/>
    	   	
    	   	<!--Conteúdo Principal-->
-   		<h3>Excluir Professor</h3>
    		<h:form>
    		<h:outputText value="Professor: " />
 		<h:selectOneMenu value="#{manterProfessorBean.professor.nome}">				
 		</h:selectOneMenu >	
-			<h:panelGrid columns="2">				
+			<h:panelGrid columns="2">	
+				<f:facet name="header">
+					<h:outputText value="Excluir Professor" />
+				</f:facet>			
 				<h:outputText value="Nome: " />
-				<h:outputText value="" />
+				<h:outputText value="#{manterProfessorBean.professor.nome}" />
 				<h:outputText value="Matrícula: " />
-				<h:outputText value="" />
-							
-			</h:panelGrid>  
-			<br />	
+				<h:outputText value="#{manterProfessorBean.professor.matricula}" />							
+			</h:panelGrid> 
+			
 			<h:outputText value="Deseja realmente Excluir?" /><br/>
 			<h:commandButton value="SIM" action="#{manterProfessorBean.excluir}"/>  
 			<h:commandButton value="NÃO" action="#{manterProfessorBean.voltarPagina}"/> 	

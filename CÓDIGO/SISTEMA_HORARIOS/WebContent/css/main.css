@@ -88,7 +88,7 @@ dd {border:0; margin:0 0 0 30px; padding:0;}
 
 form {border:0; margin:0; padding:0;}
 fieldset {border:1px solid #ccc; margin:15px 0; padding:10px;}
-legend {margin-left:10px; font-size:100%; font-weight:bold; color:#008;}
+legend {text-align:right;margin-left:10px; font-size:10%; font-weight:bold; color:#008;}
 
 hr {display:block; height:1px; margin:10px 0; padding:0; background:#CCC; border:0 solid #CCC; color:#CCC;}
 
@@ -196,6 +196,7 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     #content .article {clear:both; margin:0;  padding:20px; background:url("../design/bg_page_in.jpg") 0 0 repeat-y; }
     #content .article h2 {text-align:right; margin:20 20px;padding:0px; background:#DEE5FD url("../design/content_title_bg.gif") 0 0 repeat-y; color:#192666;}
     #content .article h2 span {background:url("../design/ico_list.gif") 0 50% no-repeat; padding-left:25px;}
+    #content .article legend {text-align:right;margin-left:10px; font-size:10%; font-weight:bold; color:#008;}
     
     #content .article p {text-align:justify;}
     #content .info {margin:10px 0; padding-bottom:8px; border-bottom:1px solid #DEE5FD; color:#6685CC;}

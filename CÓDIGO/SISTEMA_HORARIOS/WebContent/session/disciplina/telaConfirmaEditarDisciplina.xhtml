@@ -20,9 +20,11 @@
    	   	<br/>
    	   	
    		<!--Conteúdo Principal-->
-   		<h3>Confirmar Editação de Disciplina</h3>
    		<h:form>			
 			<h:panelGrid columns="2">
+				<f:facet name="header">
+					<h:outputText value="Confirmar Editação de Disciplina" />
+				</f:facet>
 				<h:outputText value="Código: " />
 				<h:outputText value="#{manterDisciplinaBean.disciplina.cod_disciplina}" />
 				<h:outputText value="Nome da Disciplina: " />
