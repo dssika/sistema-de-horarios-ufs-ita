@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Montar Horarios</title>
+</h:head>
+<ui:composition template="/template/template.xhtml">
+	<ui:define name="content">
+		<div class="article"><!--Barra de navegação da página-->
+		<div class="ddoverlap">
+		<ul>
+			<li><a href="/SISTEMA_DE_HORARIOS/faces/session/horario/telaSelecionarDisciplinas.xhtml">Selecionar Disciplinas</a></li>
+			<li class="selected"><a href="/SISTEMA_DE_HORARIOS/faces/session/horario/telaMontarHorarios.xhtml">Montar Horarios</a></li>
+			<li><a href="/SISTEMA_DE_HORARIOS/faces/session/horario/telaValidacaoDosProfessores.xhtml">Validação dos Professores</a></li>
+			<li><a href="/SISTEMA_DE_HORARIOS/faces/session/horario/telaVisualizarHorarios.xhtml">Visualizar Horarios</a></li>
+			</ul>
+		</div>
+
+
+		<h2><h:outputText value="Organizar Horarios" /><br />
+		</h2>
+		<h:form>
+		<h:outputText value="Professor:"></h:outputText>
+		<h:selectOneMenu value="#{manterProfessorBean.professor.nome}"></h:selectOneMenu> <br />
+		<br />
+		<table border="1" width="100%">
+			<tr>
+				<td align="center"><h:outputText value="Professor1" /></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><h:outputText value="segunda" /></td>
+				<td><h:outputText value="terca" /></td>
+				<td><h:outputText value="quarta" /></td>
+				<td><h:outputText value="quinta" /></td>
+				<td><h:outputText value="sexta" /></td>
+			</tr>
+			<tr>
+				<td><h:selectBooleanCheckbox /><h:outputText value="Prog 1" /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+			</tr>
+			<tr>
+				<td><h:selectBooleanCheckbox /><h:outputText value="Prog 2" /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+			</tr>
+			<tr>
+				<td><h:selectBooleanCheckbox /><h:outputText value="ED 1" /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+			</tr>
+			<tr>
+				<td><h:selectBooleanCheckbox /><h:outputText value="ED 2" /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+			</tr>
+			<tr>
+				<td><h:selectBooleanCheckbox /><h:outputText value="Banco de Dados" /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+				<td align="center"><h:selectBooleanCheckbox /></td>
+			</tr>
+			
+		</table>
+		<h:commandButton id="montar" value="Montar Horario" action="#{organizarHorarioBean.montarHorario}"/> <br />
+		</h:form>
+		<br />
+		</div>
+	</ui:define>
+</ui:composition>
+
+</html>
+
