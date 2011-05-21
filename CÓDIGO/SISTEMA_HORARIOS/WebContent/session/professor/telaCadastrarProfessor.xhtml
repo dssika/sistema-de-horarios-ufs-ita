@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core">
+
+         <ui:composition template="/template/template.xhtml">
+   	   	<ui:define name="content">
+   	   	<div class="article" >
+   	   	
+   	   	<!--Barra de navegação da página-->
+   	   	<div class="ddoverlap">   	   		
+		<ul>
+		<li class="selected"><a href="/SISTEMA_DE_HORARIOS/faces/session/professor/telaCadastrarProfessor.xhtml">Cadastrar</a></li>
+		<li><a href="/SISTEMA_DE_HORARIOS/faces/session/professor/telaExcluirProfessor.xhtml">Excluir</a></li>
+		<li><a href="/SISTEMA_DE_HORARIOS/faces/session/professor/telaVisualizarDadosProfessor.xhtml">Visualizar Dados do Professor</a></li>
+		</ul> 
+		</div>	
+		<h2>Manter Professor</h2>
+   	   	<br/>
+   	   	
+   	   	<!--Conteúdo Principal-->
+   		<h:form>
+			<h:panelGrid columns="2">
+				<f:facet name="header">
+					<h:outputText value="Cadastrar Professor" />
+				</f:facet>
+				<h:outputText value="Nome: " />
+				<h:inputText value="#{manterProfessorBean.professor.nome}" />
+				<h:outputText value="Matrícula: " />
+				<h:inputText value="#{manterProfessorBean.professor.matricula}" />
+				<h:outputText value="Telefone: " />
+				<h:inputText value="#{manterProfessorBean.professor.telefone}" />
+				<h:outputText value="E-mail: " />
+				<h:inputText value="#{manterProfessorBean.professor.email}" />
+				<h:outputText value="Área: " />
+				<h:selectOneMenu value="#{manterProfessorBean.professor.area}">				
+				</h:selectOneMenu >		
+				<h:selectOneRadio id="tipo_professor" value="#{manterProfessorBean.professor.coordenador}">
+				<f:selectItem itemLabel="Professor" itemValue="F" />  <br/>
+			    <f:selectItem itemLabel="Coordenador" itemValue="T" />  					
+				</h:selectOneRadio>		
+			</h:panelGrid>  
+			<br /> 	
+			<h:commandButton value="Cadastrar" action="#{manterProfessorBean.confirmar}"/>   		
+   		</h:form>
+   	   		
+   	   	</div>
+   	   	</ui:define>
+   </ui:composition>
+   
+</html>
