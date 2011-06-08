@@ -17,15 +17,27 @@ import br.ufs.dsi.sistemaDeHorarios.horario.entidade.Horarios;
 import br.ufs.dsi.sistemaDeHorarios.turma.entidade.Turma;
 
 
-public class PersistenciaTurmaDAO {
+public class PersistenciaTurmaDAO implements IPersistenciaTurma {
+	/* (non-Javadoc)
+	 * @see br.ufs.dsi.sistemaDeHorarios.turma.dados.IPersistenciaTurma#visualizarHistorico(br.ufs.dsi.sistemaDeHorarios.turma.entidade.Turma)
+	 */
+	@Override
 	public void visualizarHistorico( Turma turma) {
 	
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.ufs.dsi.sistemaDeHorarios.turma.dados.IPersistenciaTurma#gravarHorarioTurma(br.ufs.dsi.sistemaDeHorarios.horario.entidade.Horarios)
+	 */
+	@Override
 	public void gravarHorarioTurma(Horarios horarios) {
 	
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.ufs.dsi.sistemaDeHorarios.turma.dados.IPersistenciaTurma#enviarDados(br.ufs.dsi.sistemaDeHorarios.turma.entidade.Turma)
+	 */
+	@Override
 	public void enviarDados( Turma turma) {
 	
 	}

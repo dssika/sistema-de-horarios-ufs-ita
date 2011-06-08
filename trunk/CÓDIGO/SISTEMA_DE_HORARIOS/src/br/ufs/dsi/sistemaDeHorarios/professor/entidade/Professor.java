@@ -19,7 +19,7 @@ import javax.faces.bean.NoneScoped;
 @ManagedBean
 @NoneScoped
 public class Professor {
-	private Integer matricula;
+	private int matricula;
 	private String nome;
 	private String telefone;
 	private String email;
@@ -28,10 +28,11 @@ public class Professor {
 	private String senha;
 	private char coordenador;
 	
-	public Integer getMatricula() {
+	
+	public int getMatricula() {
 		return matricula;
 	}
-	public void setMatricula(Integer matricula) {
+	public void setMatricula(int matricula) {
 		this.matricula = matricula;
 	}
 	public String getNome() {

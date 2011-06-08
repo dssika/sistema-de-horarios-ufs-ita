@@ -22,7 +22,6 @@ import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 @ManagedBean
 @RequestScoped
 public class ManterDisciplinaBean {
-	
 	@ManagedProperty(value="#{disciplina}")
 	private Disciplina disciplina;
 	
