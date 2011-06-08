@@ -20,16 +20,16 @@ import javax.faces.bean.NoneScoped;
 @NoneScoped
 
 public class Disciplina {
-	private String cod_disciplina;
+	private int cod_disciplina;
 	private String nome;
 	private int carga_horaria;
-	private char periodoDisciplina;
+	private char periodo_disciplina;
 	private char tipo_disciplina;
 	
-	public String getCod_disciplina() {
+	public int getCod_disciplina() {
 		return cod_disciplina;
 	}
-	public void setCod_disciplina(String cod_disciplina) {
+	public void setCod_disciplina(int cod_disciplina) {
 		this.cod_disciplina = cod_disciplina;
 	}
 	public String getNome() {
@@ -44,16 +44,17 @@ public class Disciplina {
 	public void setCarga_horaria(int carga_horaria) {
 		this.carga_horaria = carga_horaria;
 	}
-	public char getPeriodoDisciplina() {
-		return periodoDisciplina;
-	}
-	public void setPeriodoDisciplina(char periodoDisciplina) {
-		this.periodoDisciplina = periodoDisciplina;
-	}
+	
 	public char getTipo_disciplina() {
 		return tipo_disciplina;
 	}
 	public void setTipo_disciplina(char tipo_disciplina) {
 		this.tipo_disciplina = tipo_disciplina;
+	}
+	public char getPeriodo_disciplina() {
+		return periodo_disciplina;
+	}
+	public void setPeriodo_disciplina(char periodo_disciplina) {
+		this.periodo_disciplina = periodo_disciplina;
 	}
 }

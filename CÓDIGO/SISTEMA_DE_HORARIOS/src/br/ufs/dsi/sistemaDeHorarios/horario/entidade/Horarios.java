@@ -13,35 +13,30 @@
 
 package br.ufs.dsi.sistemaDeHorarios.horario.entidade;
 
+import java.sql.Time;
+
 
 public class Horarios {
-	private int id_horarios;
 	private String dia_semana;
-	private String hora_inicial;
-	private String hora_final;
+	private Time hora_inicial;
+	private Time hora_final;
 	
-	public int getId_horarios() {
-		return id_horarios;
-	}
-	public void setId_horarios(int id_horarios) {
-		this.id_horarios = id_horarios;
-	}
 	public String getDia_semana() {
 		return dia_semana;
 	}
 	public void setDia_semana(String dia_semana) {
 		this.dia_semana = dia_semana;
 	}
-	public String getHora_inicial() {
+	public Time getHora_inicial() {
 		return hora_inicial;
 	}
-	public void setHora_inicial(String hora_inicial) {
+	public void setHora_inicial(Time hora_inicial) {
 		this.hora_inicial = hora_inicial;
 	}
-	public String getHora_final() {
+	public Time getHora_final() {
 		return hora_final;
 	}
-	public void setHora_final(String hora_final) {
+	public void setHora_final(Time hora_final) {
 		this.hora_final = hora_final;
 	}
 }

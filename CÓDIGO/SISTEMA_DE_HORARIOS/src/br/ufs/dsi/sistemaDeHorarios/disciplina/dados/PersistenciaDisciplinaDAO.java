@@ -13,19 +13,50 @@
 
 package br.ufs.dsi.sistemaDeHorarios.disciplina.dados;
 
+import java.util.List;
+
 import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 
 
-public class PersistenciaDisciplinaDAO {
+public class PersistenciaDisciplinaDAO implements IPersistenciaDisciplina {
+	/* (non-Javadoc)
+	 * @see br.ufs.dsi.sistemaDeHorarios.disciplina.dados.IPersistenciaDisciplina#gravar(br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina)
+	 */
+	@Override
 	public void gravar(Disciplina disciplina) {
 	
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.ufs.dsi.sistemaDeHorarios.disciplina.dados.IPersistenciaDisciplina#editar(br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina)
+	 */
+	@Override
 	public void editar(Disciplina disciplina) {
 	
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.ufs.dsi.sistemaDeHorarios.disciplina.dados.IPersistenciaDisciplina#excluir(br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina)
+	 */
+	@Override
 	public void excluir(Disciplina disciplina) {
+	}
 	
+	@Override
+	public Disciplina buscar(Integer primaryKey) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Disciplina> buscarTodos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void buscar(Disciplina disciplina) {
+		// TODO Auto-generated method stub
+		
 	}
 }

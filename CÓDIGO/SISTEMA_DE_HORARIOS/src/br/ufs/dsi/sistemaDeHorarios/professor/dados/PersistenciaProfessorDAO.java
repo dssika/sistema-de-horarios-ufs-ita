@@ -18,27 +18,51 @@ import br.ufs.dsi.sistemaDeHorarios.horario.entidade.HorariosProfessor;
 import br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor;
 
 
-public class PersistenciaProfessorDAO {
+public class PersistenciaProfessorDAO implements IPersistenciaProfessor {
+	/* (non-Javadoc)
+	 * @see br.ufs.dsi.sistemaDeHorarios.professor.dados.IPersistenciaProfessor#gravar(br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor)
+	 */
+	@Override
 	public void gravar(Professor professor) {
 	
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.ufs.dsi.sistemaDeHorarios.professor.dados.IPersistenciaProfessor#excluir(br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor)
+	 */
+	@Override
 	public void excluir(Professor professor) {
 	
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.ufs.dsi.sistemaDeHorarios.professor.dados.IPersistenciaProfessor#visualizarDados(br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor)
+	 */
+	@Override
 	public void visualizarDados(Professor professor) {
 	
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.ufs.dsi.sistemaDeHorarios.professor.dados.IPersistenciaProfessor#gravarHorariosPreferenciais(br.ufs.dsi.sistemaDeHorarios.horario.entidade.HorariosProfessor)
+	 */
+	@Override
 	public void gravarHorariosPreferenciais( HorariosProfessor horarios) {
 	
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.ufs.dsi.sistemaDeHorarios.professor.dados.IPersistenciaProfessor#gravarDisciplinasPreferenciais(br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina)
+	 */
+	@Override
 	public void gravarDisciplinasPreferenciais(Disciplina disciplina) {
 	
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.ufs.dsi.sistemaDeHorarios.professor.dados.IPersistenciaProfessor#gravarValidacao(br.ufs.dsi.sistemaDeHorarios.horario.entidade.HorariosProfessor)
+	 */
+	@Override
 	public void gravarValidacao(HorariosProfessor horario) {
 	
 	}

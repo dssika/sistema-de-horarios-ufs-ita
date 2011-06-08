@@ -24,7 +24,6 @@ import br.ufs.dsi.sistemaDeHorarios.turma.entidade.Turma;
 @ManagedBean
 @RequestScoped 
 public class VisualizarHistoricoBean {
-	
 	@ManagedProperty(value="#{turma}")
 	private Turma turma;
 	private List<Turma> listaTurma;
@@ -50,7 +49,7 @@ public class VisualizarHistoricoBean {
 	}
 	
 	public String finalizar(){
-		return "sucesso";
+		return "sucesso";	
 	}
 	
 	public String editar(){

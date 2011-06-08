@@ -131,7 +131,6 @@ public class DisponibilizarHorariosEDisciplinasBean
 	public String selecionarDisciplinas() 
 	{
 		return "sucesso";
-	
 	}
 	public String voltarPagina() 
 	{

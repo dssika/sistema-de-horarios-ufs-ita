@@ -24,4 +24,5 @@ public class HorariosProfessor {
 	public void setTipo_horario(char tipo_horario) {
 		this.tipo_horario = tipo_horario;
 	}
+
 }

@@ -15,25 +15,20 @@ package br.ufs.dsi.sistemaDeHorarios.horario.entidade;
 
 
 public class Semestre {
-	private int id_semestre;
 	private int ano;
-	private char periodo;
-	public int getId_semestre() {
-		return id_semestre;
-	}
-	public void setId_semestre(int id_semestre) {
-		this.id_semestre = id_semestre;
-	}
+	private String periodo;
+	
 	public int getAno() {
 		return ano;
 	}
 	public void setAno(int ano) {
 		this.ano = ano;
 	}
-	public char getPeriodo() {
+	public String getPeriodo() {
 		return periodo;
 	}
-	public void setPeriodo(char periodo) {
+	public void setPeriodo(String periodo) {
 		this.periodo = periodo;
 	}
+	
 }
