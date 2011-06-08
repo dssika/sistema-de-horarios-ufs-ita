@@ -24,7 +24,7 @@ public class PersistenciaDisciplinaDAO implements IPersistenciaDisciplina {
 	 */
 	@Override
 	public void gravar(Disciplina disciplina) {
-	
+		
 	}
 	
 	/* (non-Javadoc)

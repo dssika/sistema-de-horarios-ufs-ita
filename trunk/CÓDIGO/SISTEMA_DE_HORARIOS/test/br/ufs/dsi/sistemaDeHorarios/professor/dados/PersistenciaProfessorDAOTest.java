@@ -11,6 +11,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor;
+
 /**
  * @author Igor Peterson
  *
@@ -50,7 +52,17 @@ public class PersistenciaProfessorDAOTest {
 	 */
 	@Test
 	public void testGravar() {
-		fail("Not yet implemented");
+		IPersistenciaProfessor persistenciaProfessor = new PersistenciaProfessorDAO();
+		
+		Professor professor = new Professor();
+		professor.setArea("Engenharia de Softeare");
+		persistenciaProfessor.gravar(professor);
+		
+		Professor professorConsulta = persistenciaProfessor.visualizarDados(professor);
+		
+		assertEquals(professor.getNome(), professorConsulta.getNome());
+		
+		
 	}
 
 	/**

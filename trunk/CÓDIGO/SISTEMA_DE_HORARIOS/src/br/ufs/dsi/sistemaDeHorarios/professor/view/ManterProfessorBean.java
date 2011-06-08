@@ -56,14 +56,6 @@ public class ManterProfessorBean
 		return "sucesso";
 	}
 	
-	public void gravarDisciplinaProfessor(Disciplina disciplina) {
-	
-	}
-	
-	public void visualizarDisciplinaProfessor(Disciplina disciplina) {
-	
-	}
-
 	public Professor getProfessor() {
 		return professor;
 	}
