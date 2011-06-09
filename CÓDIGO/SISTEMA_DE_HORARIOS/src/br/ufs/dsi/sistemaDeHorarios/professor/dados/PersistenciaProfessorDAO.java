@@ -39,8 +39,8 @@ public class PersistenciaProfessorDAO implements IPersistenciaProfessor {
 	 * @see br.ufs.dsi.sistemaDeHorarios.professor.dados.IPersistenciaProfessor#visualizarDados(br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor)
 	 */
 	@Override
-	public void visualizarDados(Professor professor) {
-	
+	public Professor visualizarDados(Professor professor) {
+		return professor;
 	}
 	
 	/* (non-Javadoc)
@@ -65,5 +65,11 @@ public class PersistenciaProfessorDAO implements IPersistenciaProfessor {
 	@Override
 	public void gravarValidacao(HorariosProfessor horario) {
 	
+	}
+
+	@Override
+	public void editar(Professor professor) {
+		// TODO Auto-generated method stub
+		
 	}
 }

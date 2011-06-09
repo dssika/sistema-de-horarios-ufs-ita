@@ -17,7 +17,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
-import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 import br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor;
 
 @ManagedBean
@@ -40,9 +39,6 @@ public class ManterProfessorBean
 		return "sucesso";
 	}
 	
-	public void visualizarDados() {
-	
-	}
 	
 	public String confirmar(){
 		return "sucesso";
@@ -63,4 +59,6 @@ public class ManterProfessorBean
 	public void setProfessor(Professor professor) {
 		this.professor = professor;
 	}
+	
+	
 }
