@@ -19,6 +19,9 @@ import br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor;
  */
 public class PersistenciaProfessorDAOTest {
 
+	IPersistenciaProfessor persistenciaProfessor;
+	Professor professor;
+	
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -38,6 +41,8 @@ public class PersistenciaProfessorDAOTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
+		persistenciaProfessor = new PersistenciaProfessorDAO();
+		professor = new Professor();
 	}
 
 	/**
@@ -52,25 +57,43 @@ public class PersistenciaProfessorDAOTest {
 	 */
 	@Test
 	public void testGravar() {
-		IPersistenciaProfessor persistenciaProfessor = new PersistenciaProfessorDAO();
+
+		professor.setNome("Dósea");
+		professor.setMatricula(0002223344);
+		professor.setTelefone("3344-5566");
+		professor.setEmail("dosea@ufs.br");
+		professor.setArea("Engenharia de Software");
+		professor.setCoordenador('N');
 		
-		Professor professor = new Professor();
-		professor.setArea("Engenharia de Softeare");
 		persistenciaProfessor.gravar(professor);
 		
 		Professor professorConsulta = persistenciaProfessor.visualizarDados(professor);
 		
 		assertEquals(professor.getNome(), professorConsulta.getNome());
-		
-		
+		assertEquals(professor.getMatricula(), professorConsulta.getMatricula());
+		assertEquals(professor.getTelefone(), professorConsulta.getTelefone());
+		assertEquals(professor.getEmail(), professorConsulta.getEmail());
+		assertEquals(professor.getArea(), professorConsulta.getArea());
+		assertEquals(professor.getCoordenador(), professorConsulta.getCoordenador());
+				
 	}
 
+	/**
+	 * Test method for {@link br.ufs.dsi.sistemaDeHorarios.professor.dados.PersistenciaProfessorDAO#editar(br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor)}.
+	 */
+	@Test
+	public void testEditar() {
+		persistenciaProfessor.editar(professor);
+		assertEquals(professor, persistenciaProfessor.visualizarDados(professor));
+	}
+	
 	/**
 	 * Test method for {@link br.ufs.dsi.sistemaDeHorarios.professor.dados.PersistenciaProfessorDAO#excluir(br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor)}.
 	 */
 	@Test
 	public void testExcluir() {
-		fail("Not yet implemented");
+		persistenciaProfessor.excluir(professor);
+		assertEquals(professor, persistenciaProfessor.visualizarDados(professor));
 	}
 
 	/**
@@ -78,7 +101,14 @@ public class PersistenciaProfessorDAOTest {
 	 */
 	@Test
 	public void testVisualizarDados() {
-		fail("Not yet implemented");
+		persistenciaProfessor.visualizarDados(professor);
+		Professor professorTeste = new Professor();
+		assertEquals(professor.getNome(), professorTeste.getNome());
+		assertEquals(professor.getMatricula(), professorTeste.getMatricula());
+		assertEquals(professor.getEmail(), professorTeste.getEmail());
+		assertEquals(professor.getTelefone(), professorTeste.getTelefone());
+		assertEquals(professor.getArea(), professorTeste.getArea());
+		assertEquals(professor.getCoordenador(), professorTeste.getCoordenador());
 	}
 
 	/**

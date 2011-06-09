@@ -69,4 +69,28 @@ public class PersistenciaDisciplinaDAOTest {
 		fail("Not yet implemented");
 	}
 
+	/**
+	 * Test method for {@link br.ufs.dsi.sistemaDeHorarios.disciplina.dados.PersistenciaDisciplinaDAO#buscar(java.lang.Integer)}.
+	 */
+	@Test
+	public void testBuscar() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link br.ufs.dsi.sistemaDeHorarios.disciplina.dados.PersistenciaDisciplinaDAO#buscarTodos()}.
+	 */
+	@Test
+	public void testBuscarTodos() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link br.ufs.dsi.sistemaDeHorarios.disciplina.dados.PersistenciaDisciplinaDAO#visualizarDados(br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina)}.
+	 */
+	@Test
+	public void testVisualizarDados() {
+		fail("Not yet implemented");
+	}
+
 }
