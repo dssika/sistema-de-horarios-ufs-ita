@@ -23,7 +23,7 @@ public class Disciplina {
 	private int cod_disciplina;
 	private String nome;
 	private int carga_horaria;
-	private char periodo_disciplina;
+	private int periodo_disciplina;
 	private char tipo_disciplina;
 	
 	public int getCod_disciplina() {
@@ -44,17 +44,17 @@ public class Disciplina {
 	public void setCarga_horaria(int carga_horaria) {
 		this.carga_horaria = carga_horaria;
 	}
-	
+	public int getPeriodo_disciplina() {
+		return periodo_disciplina;
+	}
+	public void setPeriodo_disciplina(int periodo_disciplina) {
+		this.periodo_disciplina = periodo_disciplina;
+	}
 	public char getTipo_disciplina() {
 		return tipo_disciplina;
 	}
 	public void setTipo_disciplina(char tipo_disciplina) {
 		this.tipo_disciplina = tipo_disciplina;
 	}
-	public char getPeriodo_disciplina() {
-		return periodo_disciplina;
-	}
-	public void setPeriodo_disciplina(char periodo_disciplina) {
-		this.periodo_disciplina = periodo_disciplina;
-	}
+	
 }

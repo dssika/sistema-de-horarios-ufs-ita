@@ -11,12 +11,17 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
+
 /**
  * @author Igor Peterson
  *
  */
 public class PersistenciaDisciplinaDAOTest {
 
+	IPersistenciaDisciplina persistenciaDisciplina;
+	Disciplina disciplina;
+	
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -36,6 +41,8 @@ public class PersistenciaDisciplinaDAOTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
+		persistenciaDisciplina = new PersistenciaDisciplinaDAO();
+		disciplina = new Disciplina();
 	}
 
 	/**
@@ -50,7 +57,21 @@ public class PersistenciaDisciplinaDAOTest {
 	 */
 	@Test
 	public void testGravar() {
-		fail("Not yet implemented");
+		disciplina.setNome("Engenharia de Software 2");
+		disciplina.setCod_disciplina(01221);
+		disciplina.setCarga_horaria(4);
+		disciplina.setPeriodo_disciplina(6);
+		disciplina.setTipo_disciplina('A');
+		
+		persistenciaDisciplina.gravar(disciplina);
+		
+		Disciplina disciplinaConsulta = persistenciaDisciplina.visualizarDisciplina(disciplina);
+		
+		assertEquals(disciplinaConsulta.getNome(), disciplina.getNome());
+		assertEquals(disciplinaConsulta.getCod_disciplina(), disciplina.getCod_disciplina());
+		assertEquals(disciplinaConsulta.getCarga_horaria(), disciplina.getCarga_horaria());
+		assertEquals(disciplinaConsulta.getPeriodo_disciplina(), disciplina.getPeriodo_disciplina());
+		assertEquals(disciplinaConsulta.getTipo_disciplina(), disciplina.getTipo_disciplina());
 	}
 
 	/**
@@ -58,7 +79,8 @@ public class PersistenciaDisciplinaDAOTest {
 	 */
 	@Test
 	public void testEditar() {
-		fail("Not yet implemented");
+		persistenciaDisciplina.editar(disciplina);
+		assertEquals(disciplina, persistenciaDisciplina.visualizarDisciplina(disciplina));
 	}
 
 	/**
@@ -66,31 +88,23 @@ public class PersistenciaDisciplinaDAOTest {
 	 */
 	@Test
 	public void testExcluir() {
-		fail("Not yet implemented");
+		persistenciaDisciplina.excluir(disciplina);
+		assertEquals(disciplina, persistenciaDisciplina.visualizarDisciplina(disciplina));
 	}
 
-	/**
-	 * Test method for {@link br.ufs.dsi.sistemaDeHorarios.disciplina.dados.PersistenciaDisciplinaDAO#buscar(java.lang.Integer)}.
-	 */
-	@Test
-	public void testBuscar() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link br.ufs.dsi.sistemaDeHorarios.disciplina.dados.PersistenciaDisciplinaDAO#buscarTodos()}.
-	 */
-	@Test
-	public void testBuscarTodos() {
-		fail("Not yet implemented");
-	}
 
 	/**
 	 * Test method for {@link br.ufs.dsi.sistemaDeHorarios.disciplina.dados.PersistenciaDisciplinaDAO#visualizarDados(br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina)}.
 	 */
 	@Test
 	public void testVisualizarDados() {
-		fail("Not yet implemented");
+		persistenciaDisciplina.visualizarDisciplina(disciplina);
+		Disciplina disciplinaTeste = new Disciplina();
+		assertEquals(disciplina.getNome(), disciplinaTeste.getNome());
+		assertEquals(disciplina.getCarga_horaria(), disciplinaTeste.getCarga_horaria());
+		assertEquals(disciplina.getCod_disciplina(), disciplinaTeste.getCod_disciplina());
+		assertEquals(disciplina.getPeriodo_disciplina(), disciplinaTeste.getPeriodo_disciplina());
+		assertEquals(disciplina.getTipo_disciplina(), disciplinaTeste.getTipo_disciplina());
 	}
 
 }
