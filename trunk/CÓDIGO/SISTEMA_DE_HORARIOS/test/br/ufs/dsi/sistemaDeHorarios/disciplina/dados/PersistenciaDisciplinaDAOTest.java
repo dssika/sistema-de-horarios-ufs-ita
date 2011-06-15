@@ -17,6 +17,7 @@ import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
  * @author Igor Peterson
  *
  */
+
 public class PersistenciaDisciplinaDAOTest {
 
 	IPersistenciaDisciplina persistenciaDisciplina;

@@ -1,11 +1,12 @@
 package br.ufs.dsi.sistemaDeHorarios.professor.dados;
 
 
+import br.ufs.dsi.sistemaDeHorarios.arquitetura.dados.DaoGenerico;
 import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 import br.ufs.dsi.sistemaDeHorarios.horario.entidade.HorariosProfessor;
 import br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor;
 
-public interface IPersistenciaProfessor {
+public interface IPersistenciaProfessor extends DaoGenerico<Professor, Integer>{
 
 	public abstract void gravar(Professor professor);
 	

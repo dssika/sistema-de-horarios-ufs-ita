@@ -1,9 +1,10 @@
 package br.ufs.dsi.sistemaDeHorarios.turma.dados;
 
+import br.ufs.dsi.sistemaDeHorarios.arquitetura.dados.DaoGenerico;
 import br.ufs.dsi.sistemaDeHorarios.horario.entidade.Horarios;
 import br.ufs.dsi.sistemaDeHorarios.turma.entidade.Turma;
 
-public interface IPersistenciaTurma {
+public interface IPersistenciaTurma extends DaoGenerico<Turma, Integer> {
 
 	public abstract void visualizarHistorico(Turma turma);
 

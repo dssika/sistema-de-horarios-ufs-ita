@@ -13,32 +13,89 @@
 
 package br.ufs.dsi.sistemaDeHorarios.horario.dados;
 
+import java.util.List;
+
 import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
+import br.ufs.dsi.sistemaDeHorarios.horario.entidade.Horarios;
 import br.ufs.dsi.sistemaDeHorarios.horario.entidade.HorariosProfessor;
 
 
-public class PersistenciaHorarioDAO {
+public class PersistenciaHorarioDAO implements IPersistenciaHorarioDAO {
+	/* (non-Javadoc)
+	 * @see br.ufs.dsi.sistemaDeHorarios.horario.dados.IPersistenciaHorarioDAO#inserirDisciplinaObrigatoria(br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina)
+	 */
+	@Override
 	public void inserirDisciplinaObrigatoria(Disciplina disciplina) {
 	
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.ufs.dsi.sistemaDeHorarios.horario.dados.IPersistenciaHorarioDAO#inserirDisciplinaOptativa(br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina)
+	 */
+	@Override
 	public void inserirDisciplinaOptativa(Disciplina disciplina) {
 	
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.ufs.dsi.sistemaDeHorarios.horario.dados.IPersistenciaHorarioDAO#ofertarHorario()
+	 */
+	@Override
 	public void ofertarHorario() {
 	
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.ufs.dsi.sistemaDeHorarios.horario.dados.IPersistenciaHorarioDAO#inserirHorarioProfessor(br.ufs.dsi.sistemaDeHorarios.horario.entidade.HorariosProfessor)
+	 */
+	@Override
 	public void inserirHorarioProfessor(HorariosProfessor horarioProfessor) {
 	
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.ufs.dsi.sistemaDeHorarios.horario.dados.IPersistenciaHorarioDAO#visualizarHorarioPeriodo(br.ufs.dsi.sistemaDeHorarios.horario.entidade.HorariosProfessor)
+	 */
+	@Override
 	public void visualizarHorarioPeriodo(HorariosProfessor horarioProfessor) {
 	
 	}
 	
+	/* (non-Javadoc)
+	 * @see br.ufs.dsi.sistemaDeHorarios.horario.dados.IPersistenciaHorarioDAO#gravarHorario()
+	 */
+	@Override
 	public void gravarHorario() {
 	
+	}
+
+	@Override
+	public Horarios buscar(Integer primaryKey) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Horarios> buscarTodos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void gravar(Horarios object) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void editar(Horarios object) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void excluir(Horarios object) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -13,6 +13,8 @@
 
 package br.ufs.dsi.sistemaDeHorarios.turma.dados;
 
+import java.util.List;
+
 import br.ufs.dsi.sistemaDeHorarios.horario.entidade.Horarios;
 import br.ufs.dsi.sistemaDeHorarios.turma.entidade.Turma;
 
@@ -40,5 +42,35 @@ public class PersistenciaTurmaDAO implements IPersistenciaTurma {
 	@Override
 	public void enviarDados( Turma turma) {
 	
+	}
+
+	@Override
+	public Turma buscar(Integer primaryKey) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Turma> buscarTodos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void gravar(Turma object) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void editar(Turma object) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void excluir(Turma object) {
+		// TODO Auto-generated method stub
+		
 	}
 }

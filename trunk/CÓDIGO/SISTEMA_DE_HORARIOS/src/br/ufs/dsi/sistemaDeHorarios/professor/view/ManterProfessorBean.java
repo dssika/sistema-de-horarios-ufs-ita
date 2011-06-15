@@ -27,7 +27,7 @@ public class ManterProfessorBean
 	private Professor professor;
 	
 	
-	public String gravar() {
+	public String gravar() {		
 		return "sucesso";
 	}
 	
