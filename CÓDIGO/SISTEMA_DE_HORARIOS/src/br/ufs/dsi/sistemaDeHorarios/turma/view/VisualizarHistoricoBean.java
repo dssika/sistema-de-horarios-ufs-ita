@@ -32,22 +32,6 @@ public class VisualizarHistoricoBean {
 		return "sucesso";
 	}
 
-	public Turma getTurma() {
-		return turma;
-	}
-
-	public void setTurma(Turma turma) {
-		this.turma = turma;
-	}
-
-	public List<Turma> getListaTurma() {
-		return listaTurma;
-	}
-
-	public void setListaTurma(List<Turma> listaTurma) {
-		this.listaTurma = listaTurma;
-	}
-	
 	public String finalizar(){
 		return "sucesso";	
 	}
@@ -62,5 +46,21 @@ public class VisualizarHistoricoBean {
 	
 	public String voltarPagina(){
 		return "sucesso";
+	}
+	
+	public Turma getTurma() {
+		return turma;
+	}
+
+	public void setTurma(Turma turma) {
+		this.turma = turma;
+	}
+
+	public List<Turma> getListaTurma() {
+		return listaTurma;
+	}
+
+	public void setListaTurma(List<Turma> listaTurma) {
+		this.listaTurma = listaTurma;
 	}
 }

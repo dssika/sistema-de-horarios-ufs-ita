@@ -13,6 +13,8 @@
 
 package br.ufs.dsi.sistemaDeHorarios.professor.dados;
 
+import java.util.List;
+
 import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 import br.ufs.dsi.sistemaDeHorarios.horario.entidade.HorariosProfessor;
 import br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor;
@@ -71,5 +73,17 @@ public class PersistenciaProfessorDAO implements IPersistenciaProfessor {
 	public void editar(Professor professor) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public Professor buscar(Integer primaryKey) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Professor> buscarTodos() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

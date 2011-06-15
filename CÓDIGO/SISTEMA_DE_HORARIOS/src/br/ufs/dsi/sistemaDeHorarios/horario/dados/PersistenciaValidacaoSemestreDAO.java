@@ -14,7 +14,11 @@
 package br.ufs.dsi.sistemaDeHorarios.horario.dados;
 
 
-public class PersistenciaValidacaoSemestreDAO {
+public class PersistenciaValidacaoSemestreDAO implements IPersistenciaValidacaoSemestreDAO {
+	/* (non-Javadoc)
+	 * @see br.ufs.dsi.sistemaDeHorarios.horario.dados.IPersistenciaValidacaoSDAO#gravarValidacao()
+	 */
+	@Override
 	public void gravarValidacao() {
 	
 	}

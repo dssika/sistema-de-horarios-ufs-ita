@@ -14,6 +14,8 @@
 package br.ufs.dsi.sistemaDeHorarios.disciplina.dados;
 
 
+import java.util.List;
+
 import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 
 
@@ -44,6 +46,18 @@ public class PersistenciaDisciplinaDAO implements IPersistenciaDisciplina {
 	@Override
 	public Disciplina visualizarDisciplina(Disciplina disciplina) {
 		return disciplina;		
+	}
+
+	@Override
+	public Disciplina buscar(Integer primaryKey) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Disciplina> buscarTodos() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
