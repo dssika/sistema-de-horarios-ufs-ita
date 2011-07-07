@@ -22,8 +22,10 @@
    		<!--Conteúdo Principal-->
    		<h:form>
 		<h:outputText value="Selecione uma Disciplina: " />
-		<h:selectOneMenu value="#{manterDisciplinaBean.disciplina.nome}">				
-		</h:selectOneMenu >
+		<h:selectOneMenu>
+			<f:selectItems value="#{manterDisciplinaBean.disciplinas}" />
+		</h:selectOneMenu>
+		
 			<h:panelGrid columns="2">
 				<f:facet name="header">
 					<h:outputText value="Editar Disciplina" />
@@ -35,8 +37,8 @@
 				<h:outputText value="Carga Horária: " />
 				<h:inputText value="#{manterDisciplinaBean.disciplina.carga_horaria}" />
 				<h:outputText value="Período da Disciplina" />
-				<h:selectOneMenu value="#{manterDisciplinaBean.disciplina.periodo_disciplina}">				
-				</h:selectOneMenu >
+				<h:inputText value="#{manterDisciplinaBean.disciplina.periodo_disciplina}" />
+				
 				<h:selectOneRadio id="tipo_disciplina" value="#{manterDisciplinaBean.disciplina.tipo_disciplina}">
 				<f:selectItem itemLabel="Obrigatória" itemValue="O" />  <br/>
 			    <f:selectItem itemLabel="Optativa" itemValue="A" />  					

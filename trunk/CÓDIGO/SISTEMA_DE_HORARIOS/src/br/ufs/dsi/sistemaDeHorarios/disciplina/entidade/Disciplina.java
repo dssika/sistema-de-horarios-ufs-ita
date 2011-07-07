@@ -14,16 +14,28 @@
 package br.ufs.dsi.sistemaDeHorarios.disciplina.entidade;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.NoneScoped;
+import javax.faces.bean.SessionScoped;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @ManagedBean
-@NoneScoped
+@SessionScoped
 
+@Entity
+@Table(name="tb_disciplina")
 public class Disciplina {
+	@Id
+	@Column(name="COD_DISCIPLINA")
 	private int cod_disciplina;
+	@Column(name="NOME")
 	private String nome;
+	@Column(name="CARGA_HORARIA")
 	private int carga_horaria;
+	@Column(name="PERIODO_DISCIPLINA")
 	private int periodo_disciplina;
+	@Column(name="TIPO_DISCIPLINA")
 	private char tipo_disciplina;
 	
 	public int getCod_disciplina() {
