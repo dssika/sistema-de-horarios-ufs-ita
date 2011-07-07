@@ -14,17 +14,65 @@
 package br.ufs.dsi.sistemaDeHorarios.disciplina.dados;
 
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
+import br.ufs.dsi.sistemaDeHorarios.arquitetura.dados.Conexao;
 import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 
 
 public class PersistenciaDisciplinaDAO implements IPersistenciaDisciplina {
+	
+	Connection conn = null;
+
+	public void abrirConexao() throws SQLException {
+		conn = Conexao.getConexao();
+	}
+	
 	/* (non-Javadoc)
 	 * @see br.ufs.dsi.sistemaDeHorarios.disciplina.dados.IPersistenciaDisciplina#gravar(br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina)
 	 */
 	@Override
 	public void gravar(Disciplina disciplina) {
+
+			try {
+				abrirConexao();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		
+		String sql = "INSERT INTO tb_disciplina (cod_disciplina, nome,carga_horaria,"
+			+ "periodo_disciplina,tipo_disciplina)"
+			+ "VALUES (?,?,?,?,?)";
+
+	PreparedStatement ps;
+
+	try {
+		ps = conn.prepareStatement(sql);
+		ps.setInt(1, disciplina.getCod_disciplina());
+		ps.setString(2, disciplina.getNome());
+		ps.setInt(3, disciplina.getCarga_horaria());
+		ps.setInt(4, disciplina.getPeriodo_disciplina());
+		ps.setString(5, String.valueOf(disciplina.getTipo_disciplina()));
+
+		ps.executeUpdate();
+
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException ex) {
+				ex.printStackTrace();
+			}
+		}
 		
 	}
 	
@@ -34,6 +82,40 @@ public class PersistenciaDisciplinaDAO implements IPersistenciaDisciplina {
 	@Override
 	public void editar(Disciplina disciplina) {
 	
+		try {
+			abrirConexao();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	
+		String sql = "UPDATE tb_disciplina ( nome=?,carga_horaria=?,"
+			+ "periodo_disciplina=?,tipo_disciplina=?)"
+			+ "where cod_disciplina = ?";
+
+		PreparedStatement ps;
+		
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, disciplina.getNome());
+			ps.setInt(2, disciplina.getCarga_horaria());
+			ps.setInt(3, disciplina.getPeriodo_disciplina());
+			ps.setString(4, String.valueOf(disciplina.getTipo_disciplina()));
+			ps.setInt(5, disciplina.getCod_disciplina());
+			
+			ps.executeUpdate();
+
+			} catch (SQLException ex) {
+				ex.printStackTrace();
+			} finally {
+				try {
+					conn.close();
+				} catch (SQLException ex) {
+					ex.printStackTrace();
+				}
+			}
+		
 	}
 	
 	/* (non-Javadoc)
@@ -41,11 +123,54 @@ public class PersistenciaDisciplinaDAO implements IPersistenciaDisciplina {
 	 */
 	@Override
 	public void excluir(Disciplina disciplina) {
+		
+		try {
+			abrirConexao();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String discip = "DELETE FROM tb_disciplina WHERE matricula = ?";
+
+		PreparedStatement ps;
+		try {
+			ps = conn.prepareStatement(discip);
+			ps.setInt(1, disciplina.getCod_disciplina());
+			ps.executeUpdate();
+
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException ex) {
+				ex.printStackTrace();
+			}
+		}
+		
 	}
 	
 	@Override
-	public Disciplina visualizarDisciplina(Disciplina disciplina) {
-		return disciplina;		
+	public List<Disciplina> visualizarDisciplina() {		
+		List<Disciplina> listaDisciplina = new ArrayList<Disciplina>();
+        
+        try {
+        	abrirConexao();
+            Statement statement = conn.createStatement();
+            ResultSet resultset = statement.executeQuery("select nome FROM tb_disciplina");
+            
+            while (resultset.next()) {
+            	Disciplina disciplina = new Disciplina();
+            	disciplina.setNome( resultset.getString("nome"));
+            	listaDisciplina.add( disciplina );
+            }
+            conn.close();
+            
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } 
+        return listaDisciplina;		
 	}
 
 	@Override

@@ -15,6 +15,12 @@ package br.ufs.dsi.sistemaDeHorarios.professor.dados;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+
 import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 import br.ufs.dsi.sistemaDeHorarios.horario.entidade.HorariosProfessor;
 import br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor;
@@ -24,9 +30,22 @@ public class PersistenciaProfessorDAO implements IPersistenciaProfessor {
 	/* (non-Javadoc)
 	 * @see br.ufs.dsi.sistemaDeHorarios.professor.dados.IPersistenciaProfessor#gravar(br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor)
 	 */
+	
+	EntityManager manager;
+
+	
+	public PersistenciaProfessorDAO(){
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("SISTEMA_DE_HORARIOS");
+		manager = factory.createEntityManager();
+	}
+	
+	
 	@Override
 	public void gravar(Professor professor) {
-	
+		manager.getTransaction().begin();
+		manager.persist(professor);
+		manager.getTransaction().commit();
+		manager.close();
 	}
 	
 	/* (non-Javadoc)
@@ -34,8 +53,13 @@ public class PersistenciaProfessorDAO implements IPersistenciaProfessor {
 	 */
 	@Override
 	public void excluir(Professor professor) {
-	
+		manager.getTransaction().begin();
+		Professor professorBusca = buscar(professor.getMatricula());
+		manager.remove(professorBusca);
+		manager.getTransaction().commit();
 	}
+
+	
 	
 	/* (non-Javadoc)
 	 * @see br.ufs.dsi.sistemaDeHorarios.professor.dados.IPersistenciaProfessor#visualizarDados(br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor)
@@ -43,6 +67,8 @@ public class PersistenciaProfessorDAO implements IPersistenciaProfessor {
 	@Override
 	public Professor visualizarDados(Professor professor) {
 		return professor;
+		//Professor professorBusca = buscar(professor.getMatricula());
+		//return professorBusca;
 	}
 	
 	/* (non-Javadoc)
@@ -71,19 +97,24 @@ public class PersistenciaProfessorDAO implements IPersistenciaProfessor {
 
 	@Override
 	public void editar(Professor professor) {
-		// TODO Auto-generated method stub
-		
+		Professor autorBusca = buscar(professor.getMatricula());
+        autorBusca.setNome(professor.getNome());
+		autorBusca.setLogin(professor.getLogin());
+		autorBusca.setSenha(professor.getSenha());
+		autorBusca.setTelefone(professor.getTelefone());
+		autorBusca.setArea(professor.getArea());
+		autorBusca.setCoordenador(professor.getCoordenador());
+		autorBusca.setEmail(professor.getEmail());
 	}
 
 	@Override
-	public Professor buscar(Integer primaryKey) {
-		// TODO Auto-generated method stub
-		return null;
+	public Professor buscar(Integer idProfessor) {
+		 return manager.find(Professor.class, idProfessor);
 	}
 
 	@Override
 	public List<Professor> buscarTodos() {
-		// TODO Auto-generated method stub
-		return null;
+		Query query = manager.createQuery("select * from Autor");
+        return  query.getResultList();
 	}
 }

@@ -15,18 +15,33 @@ package br.ufs.dsi.sistemaDeHorarios.professor.entidade;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.NoneScoped;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @ManagedBean
 @NoneScoped
+@Entity
+@Table(name="tb_professor")
 public class Professor {
+	@Id
+	@Column(name="MATRICULA")
 	private int matricula;
+	@Column(name="NOME")
 	private String nome;
+	@Column(name="TELEFONE")
 	private String telefone;
+	@Column(name="EMAIL")
 	private String email;
+	@Column(name="AREA")
 	private String area;
+	@Column(name="LOGIN")
 	private String login;
+	@Column(name="SENHA")
 	private String senha;
-	private char coordenador;
+	@Column(name="CORDENADOR")
+	private char cordenador;
 	
 	
 	public int getMatricula() {
@@ -72,10 +87,10 @@ public class Professor {
 		this.senha = senha;
 	}
 	public char getCoordenador() {
-		return coordenador;
+		return cordenador;
 	}
 	public void setCoordenador(char coordenador) {
-		this.coordenador = coordenador;
+		this.cordenador = coordenador;
 	}
 	
 	
