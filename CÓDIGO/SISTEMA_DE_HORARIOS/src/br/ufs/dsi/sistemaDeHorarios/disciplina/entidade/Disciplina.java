@@ -37,7 +37,7 @@ public class Disciplina {
 	private int periodo_disciplina;
 	@Column(name="TIPO_DISCIPLINA")
 	private char tipo_disciplina;
-	
+
 	public int getCod_disciplina() {
 		return cod_disciplina;
 	}

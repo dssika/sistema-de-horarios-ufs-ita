@@ -2,16 +2,16 @@ package br.ufs.dsi.sistemaDeHorarios.disciplina.negocio;
 
 import java.util.List;
 
-import br.ufs.dsi.sistemaDeHorarios.disciplina.dados.IPersistenciaDisciplina;
-import br.ufs.dsi.sistemaDeHorarios.disciplina.dados.PersistenciaDisciplinaDAO;
+import br.ufs.dsi.sistemaDeHorarios.disciplina.dados.IPersistenciaDisciplinaDaoJPA;
+import br.ufs.dsi.sistemaDeHorarios.disciplina.dados.PersistenciaDisciplinaDAO_JPA;
 import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 
 public class NegocioDisciplina {
 	
-	IPersistenciaDisciplina persistenciaDisciplina;
+	IPersistenciaDisciplinaDaoJPA persistenciaDisciplina;
 	
 	public NegocioDisciplina(){
-		persistenciaDisciplina = new PersistenciaDisciplinaDAO() ;
+		persistenciaDisciplina = new PersistenciaDisciplinaDAO_JPA() ;
 	}
 	
 	public void gravar(Disciplina disciplina) {
@@ -26,7 +26,7 @@ public class NegocioDisciplina {
 		persistenciaDisciplina.editar(disciplina);
 	}
 	
-	public List<Disciplina> visualizarDisciplina(){
-		return persistenciaDisciplina.visualizarDisciplina();
+	public List<Disciplina> visualizarDisciplina(Disciplina disciplina){
+		return (List<Disciplina>) persistenciaDisciplina.visualizarDisciplina(disciplina);
 	}
 }

@@ -1,6 +1,8 @@
 package br.ufs.dsi.sistemaDeHorarios.professor.dados;
 
 
+import java.util.List;
+
 import br.ufs.dsi.sistemaDeHorarios.arquitetura.dados.DaoGenerico;
 import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 import br.ufs.dsi.sistemaDeHorarios.horario.entidade.HorariosProfessor;
@@ -15,6 +17,8 @@ public interface IPersistenciaProfessor extends DaoGenerico<Professor, Integer>{
 	public abstract void excluir(Professor professor);
 
 	public abstract Professor visualizarDados(Professor professor);
+	
+	public abstract List<Professor> buscarTodos();
 
 	public abstract void gravarHorariosPreferenciais(HorariosProfessor horarios);
 

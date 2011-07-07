@@ -97,14 +97,14 @@ public class PersistenciaProfessorDAO implements IPersistenciaProfessor {
 
 	@Override
 	public void editar(Professor professor) {
-		Professor autorBusca = buscar(professor.getMatricula());
-        autorBusca.setNome(professor.getNome());
-		autorBusca.setLogin(professor.getLogin());
-		autorBusca.setSenha(professor.getSenha());
-		autorBusca.setTelefone(professor.getTelefone());
-		autorBusca.setArea(professor.getArea());
-		autorBusca.setCoordenador(professor.getCoordenador());
-		autorBusca.setEmail(professor.getEmail());
+		Professor buscaProfessor = buscar(professor.getMatricula());
+        buscaProfessor.setNome(professor.getNome());
+		buscaProfessor.setLogin(professor.getLogin());
+		buscaProfessor.setSenha(professor.getSenha());
+		buscaProfessor.setTelefone(professor.getTelefone());
+		buscaProfessor.setArea(professor.getArea());
+		buscaProfessor.setCoordenador(professor.getCoordenador());
+		buscaProfessor.setEmail(professor.getEmail());
 	}
 
 	@Override
@@ -114,7 +114,7 @@ public class PersistenciaProfessorDAO implements IPersistenciaProfessor {
 
 	@Override
 	public List<Professor> buscarTodos() {
-		Query query = manager.createQuery("select * from Autor");
+		Query query = manager.createQuery("select * from tb_professor");
         return  query.getResultList();
 	}
 }
