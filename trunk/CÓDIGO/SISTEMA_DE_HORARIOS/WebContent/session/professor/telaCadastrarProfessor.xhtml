@@ -34,8 +34,7 @@
 				<h:outputText value="Email: " />
 				<h:inputText value="#{manterProfessorBean.professor.email}" />
 				<h:outputText value="Área: " />
-				<h:selectOneMenu value="#{manterProfessorBean.professor.area}">				
-				</h:selectOneMenu >		
+				<h:inputText value="#{manterProfessorBean.professor.area}" />
 				<h:selectOneRadio id="tipo_professor" value="#{manterProfessorBean.professor.coordenador}">
 				<f:selectItem itemLabel="Professor" itemValue="N" />  <br/>
 			    <f:selectItem itemLabel="Coordenador" itemValue="S" />  					

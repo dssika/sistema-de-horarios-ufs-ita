@@ -64,7 +64,7 @@ public class ManterDisciplinaBean {
 	
 	public List<Disciplina> visualizarDisciplina(){
 		NegocioDisciplina negocioDisciplina = new NegocioDisciplina();
-		return negocioDisciplina.visualizarDisciplina();	
+		return negocioDisciplina.visualizarDisciplina(disciplina);	
 	}
 
 	public List<Disciplina> getDisciplinas() {

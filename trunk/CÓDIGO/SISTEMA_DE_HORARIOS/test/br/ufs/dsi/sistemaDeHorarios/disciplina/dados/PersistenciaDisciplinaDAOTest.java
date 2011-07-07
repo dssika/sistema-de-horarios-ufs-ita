@@ -20,7 +20,7 @@ import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 
 public class PersistenciaDisciplinaDAOTest {
 
-	IPersistenciaDisciplina persistenciaDisciplina;
+	IPersistenciaDisciplinaJDBC persistenciaDisciplina;
 	Disciplina disciplina;
 	
 	/**
@@ -42,7 +42,7 @@ public class PersistenciaDisciplinaDAOTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		persistenciaDisciplina = new PersistenciaDisciplinaDAO();
+		persistenciaDisciplina = new PersistenciaDisciplinaDAO_JDBC();
 		disciplina = new Disciplina();
 	}
 
@@ -54,7 +54,7 @@ public class PersistenciaDisciplinaDAOTest {
 	}
 
 	/**
-	 * Test method for {@link br.ufs.dsi.sistemaDeHorarios.disciplina.dados.PersistenciaDisciplinaDAO#gravar(br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina)}.
+	 * Test method for {@link br.ufs.dsi.sistemaDeHorarios.disciplina.dados.PersistenciaDisciplinaDAO_JDBC#gravar(br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina)}.
 	 */
 	@Test
 	public void testGravar() {
@@ -76,7 +76,7 @@ public class PersistenciaDisciplinaDAOTest {
 	}
 
 	/**
-	 * Test method for {@link br.ufs.dsi.sistemaDeHorarios.disciplina.dados.PersistenciaDisciplinaDAO#editar(br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina)}.
+	 * Test method for {@link br.ufs.dsi.sistemaDeHorarios.disciplina.dados.PersistenciaDisciplinaDAO_JDBC#editar(br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina)}.
 	 */
 	@Test
 	public void testEditar() {
@@ -85,7 +85,7 @@ public class PersistenciaDisciplinaDAOTest {
 	}
 
 	/**
-	 * Test method for {@link br.ufs.dsi.sistemaDeHorarios.disciplina.dados.PersistenciaDisciplinaDAO#excluir(br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina)}.
+	 * Test method for {@link br.ufs.dsi.sistemaDeHorarios.disciplina.dados.PersistenciaDisciplinaDAO_JDBC#excluir(br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina)}.
 	 */
 	@Test
 	public void testExcluir() {
@@ -95,7 +95,7 @@ public class PersistenciaDisciplinaDAOTest {
 
 
 	/**
-	 * Test method for {@link br.ufs.dsi.sistemaDeHorarios.disciplina.dados.PersistenciaDisciplinaDAO#visualizarDados(br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina)}.
+	 * Test method for {@link br.ufs.dsi.sistemaDeHorarios.disciplina.dados.PersistenciaDisciplinaDAO_JDBC#visualizarDados(br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina)}.
 	 */
 	@Test
 	public void testVisualizarDados() {

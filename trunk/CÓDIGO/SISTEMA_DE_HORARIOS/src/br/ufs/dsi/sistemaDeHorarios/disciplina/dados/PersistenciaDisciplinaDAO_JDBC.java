@@ -26,7 +26,7 @@ import br.ufs.dsi.sistemaDeHorarios.arquitetura.dados.Conexao;
 import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 
 
-public class PersistenciaDisciplinaDAO implements IPersistenciaDisciplina {
+public class PersistenciaDisciplinaDAO_JDBC implements IPersistenciaDisciplinaJDBC {
 	
 	Connection conn = null;
 
