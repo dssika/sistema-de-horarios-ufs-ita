@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" 
       xmlns:ui="http://java.sun.com/jsf/facelets" 
       xmlns:h="http://java.sun.com/jsf/html" 
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:rich="http://richfaces.org/rich">
       
 
    	<ui:composition template="/template/template.xhtml">
@@ -22,22 +23,37 @@
    	   	
    	   	<!--Conteúdo Principal-->
 	   	<h:form>
-			<h:panelGrid columns="2">
+			<h:panelGrid columns="3">
 				<f:facet name="header">
 					<h:outputText value="Cadastrar Disciplina" />
 				</f:facet>
 				<h:outputText value="Código: " />
-				<h:inputText value="#{manterDisciplinaBean.disciplina.cod_disciplina}" />
+				<h:inputText value="#{manterDisciplinaBean.disciplina.cod_disciplina}" id="cod" validatorMessage="Tamanho max. 15 caract." required="true">
+                    <f:validateLength minimum="3" maximum="15"/>
+                </h:inputText>
+                <rich:message for="cod" ajaxRendered="true"/>
+                
 				<h:outputText value="Nome da Disciplina: " />
-				<h:inputText value="#{manterDisciplinaBean.disciplina.nome}" />
+				<h:inputText value="#{manterDisciplinaBean.disciplina.nome}" id="name" validatorMessage="Tamanho inválido." required="true">
+                    <f:validateLength minimum="3" maximum="40"/>
+                </h:inputText>
+                <rich:message for="name" ajaxRendered="true"/>
+                
 				<h:outputText value="Carga Horária: " />
-				<h:inputText value="#{manterDisciplinaBean.disciplina.carga_horaria}" />
+				<h:inputText value="#{manterDisciplinaBean.disciplina.carga_horaria}" id="carga" validatorMessage="Tamanho max. 2 caract." required="true">
+                    <f:validateLength maximum="2"/>
+                </h:inputText>
+                <rich:message for="carga" ajaxRendered="true"/>
+                
 				<h:outputText value="Período da Disciplina" />
-				<h:inputText value="#{manterDisciplinaBean.disciplina.periodo_disciplina}" />
+				<h:inputText value="#{manterDisciplinaBean.disciplina.periodo_disciplina}" id="periodo" validatorMessage="Tamanho max. 2 caract." required="true">
+                    <f:validateLength maximum="2"/>
+                </h:inputText>
+                <rich:message for="periodo" ajaxRendered="true"/>
 				
 				<h:selectOneRadio id="tipo_disciplina" value="#{manterDisciplinaBean.disciplina.tipo_disciplina}">
-				<f:selectItem itemLabel="Obrigatória" itemValue="O" />  <br/>
-			    <f:selectItem itemLabel="Optativa" itemValue="A" />  					
+				<f:selectItem itemLabel="Obrigatória" itemValue="A" />  <br/>
+			    <f:selectItem itemLabel="Optativa" itemValue="O" />  					
 				</h:selectOneRadio>
 				</h:panelGrid>
 			
