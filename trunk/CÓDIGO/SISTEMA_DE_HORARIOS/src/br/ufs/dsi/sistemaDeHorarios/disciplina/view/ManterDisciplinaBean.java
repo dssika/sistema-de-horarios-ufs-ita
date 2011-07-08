@@ -27,6 +27,7 @@ import br.ufs.dsi.sistemaDeHorarios.disciplina.negocio.NegocioDisciplina;
 public class ManterDisciplinaBean {
 	@ManagedProperty(value="#{disciplina}")
 	private Disciplina disciplina;
+	NegocioDisciplina negocioDisciplina;
 	
 	private List<Disciplina> disciplinas;
 	
@@ -48,22 +49,22 @@ public class ManterDisciplinaBean {
 	}
 	
 	public void gravar(){
-		NegocioDisciplina negocioDisciplina = new NegocioDisciplina();
+		negocioDisciplina = new NegocioDisciplina();
 		negocioDisciplina.gravar(disciplina);
 	}
 	
 	public void editar(){
-		NegocioDisciplina negocioDisciplina = new NegocioDisciplina();
+		negocioDisciplina = new NegocioDisciplina();
 		negocioDisciplina.editar(disciplina);		
 	}
 	
 	public void excluir(){
-		NegocioDisciplina negocioDisciplina = new NegocioDisciplina();
+		negocioDisciplina = new NegocioDisciplina();
 		negocioDisciplina.excluir(disciplina);		
 	}
 	
 	public List<Disciplina> visualizarDisciplina(){
-		NegocioDisciplina negocioDisciplina = new NegocioDisciplina();
+		negocioDisciplina = new NegocioDisciplina();
 		return negocioDisciplina.visualizarDisciplina(disciplina);	
 	}
 
