@@ -18,6 +18,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
 import br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor;
+import br.ufs.dsi.sistemaDeHorarios.professor.negocio.INegocioProfessor;
 import br.ufs.dsi.sistemaDeHorarios.professor.negocio.NegocioProfessor;
 
 @ManagedBean
@@ -26,21 +27,21 @@ public class ManterProfessorBean
 {
 	@ManagedProperty(value="#{professor}")
 	private Professor professor;
-	NegocioProfessor professorNegocio;
+	INegocioProfessor professorNegocio;
 	
-	
-	public void gravar() {		
+	public ManterProfessorBean(){
 		professorNegocio = new NegocioProfessor();
+	}
+	
+	public void gravar() {				
 		professorNegocio.gravar(professor);
 	}
 	
 	public void excluir() {
-		professorNegocio = new NegocioProfessor();
 		professorNegocio.excluir(professor);
 	}
 	
 	public void editar() {
-		professorNegocio = new NegocioProfessor();
 		professorNegocio.editar(professor);
 	}
 	
@@ -53,9 +54,10 @@ public class ManterProfessorBean
 		return "sucesso";
 	}
 	
-	public String autenticar(){
+	/*(public String autenticar(){
+		professor = professorNegocio.autenticar(professor);
 		return "sucesso";
-	}
+	}*/
 	
 	public Professor getProfessor() {
 		return professor;
@@ -65,5 +67,5 @@ public class ManterProfessorBean
 		this.professor = professor;
 	}
 	
-	
+
 }

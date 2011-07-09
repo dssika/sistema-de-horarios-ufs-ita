@@ -18,17 +18,22 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.faces.event.ValueChangeEvent;
 
 import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 import br.ufs.dsi.sistemaDeHorarios.disciplina.negocio.NegocioDisciplina;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class ManterDisciplinaBean {
 	@ManagedProperty(value="#{disciplina}")
 	private Disciplina disciplina;
+	
 	NegocioDisciplina negocioDisciplina;
 	
+	private String nome;	
 	private List<Disciplina> disciplinas;
 	
 	
@@ -75,4 +80,22 @@ public class ManterDisciplinaBean {
 	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
 	}
+
+	
+	public void mudar(ValueChangeEvent e){
+		this.nome = e.getNewValue().toString();
+		for(Disciplina d : this.disciplinas){
+			if(d.getNome().equals(nome))
+				disciplina = d;
+		}
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 }
