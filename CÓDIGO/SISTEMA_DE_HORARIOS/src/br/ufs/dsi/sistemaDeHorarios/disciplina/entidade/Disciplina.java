@@ -13,12 +13,18 @@
 
 package br.ufs.dsi.sistemaDeHorarios.disciplina.entidade;
 
+
+import java.util.Collection;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor;
 
 @ManagedBean
 @SessionScoped
@@ -38,6 +44,9 @@ public class Disciplina {
 	@Column(name="TIPO_DISCIPLINA")
 	private char tipo_disciplina;
 
+	@ManyToMany(mappedBy="disciplinas")
+	private Collection<Professor> professores;
+	
 	public int getCod_disciplina() {
 		return cod_disciplina;
 	}
@@ -67,6 +76,12 @@ public class Disciplina {
 	}
 	public void setTipo_disciplina(char tipo_disciplina) {
 		this.tipo_disciplina = tipo_disciplina;
+	}
+	public Collection<Professor> getProfessores() {
+		return professores;
+	}
+	public void setProfessores(Collection<Professor> professores) {
+		this.professores = professores;
 	}
 	
 }

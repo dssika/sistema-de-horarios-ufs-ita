@@ -36,5 +36,9 @@ public class NegocioProfessor implements INegocioProfessor {
 		persistenciaProfessor.excluir(professor);
 	}
 	
+	/*@Override
+	public Professor autenticar(Professor professor) {
+		persistenciaProfessor.autenticar(professor);
+	}*/
 	
 }

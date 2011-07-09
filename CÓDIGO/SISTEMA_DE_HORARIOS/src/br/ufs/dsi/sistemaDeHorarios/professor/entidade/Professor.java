@@ -13,15 +13,23 @@
 
 package br.ufs.dsi.sistemaDeHorarios.professor.entidade;
 
+import java.util.Collection;
+
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.NoneScoped;
+import javax.faces.bean.SessionScoped;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
+
 @ManagedBean
-@NoneScoped
+@SessionScoped
+
 @Entity
 @Table(name="tb_professor")
 public class Professor {
@@ -43,6 +51,11 @@ public class Professor {
 	@Column(name="CORDENADOR")
 	private char cordenador;
 	
+	@ManyToMany 
+	@JoinTable(name="tb_disciplina_professor",
+				joinColumns=@JoinColumn(name="MATRICULA"),
+				inverseJoinColumns=@JoinColumn(name="COD_DISCIPLINA")	)
+	private Collection<Disciplina> disciplinas;
 	
 	public int getMatricula() {
 		return matricula;
@@ -86,11 +99,19 @@ public class Professor {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public char getCoordenador() {
+	
+	
+	public Collection<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
+	public void setDisciplinas(Collection<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
+	}
+	public char getCordenador() {
 		return cordenador;
 	}
-	public void setCoordenador(char coordenador) {
-		this.cordenador = coordenador;
+	public void setCordenador(char cordenador) {
+		this.cordenador = cordenador;
 	}
 	
 	
