@@ -22,6 +22,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+
 import br.ufs.dsi.sistemaDeHorarios.arquitetura.dados.Conexao;
 import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 
@@ -157,12 +159,15 @@ public class PersistenciaDisciplinaDAO_JDBC implements IPersistenciaDisciplinaJD
         try {
         	abrirConexao();
             Statement statement = conn.createStatement();
-            ResultSet resultset = statement.executeQuery("select nome FROM tb_disciplina");
+            ResultSet resultset = statement.executeQuery("select * FROM tb_disciplina order by nome");
             
             while (resultset.next()) {
             	Disciplina disciplina = new Disciplina();
             	disciplina.setNome( resultset.getString("nome"));
-            	listaDisciplina.add( disciplina );
+            	disciplina.setCod_disciplina(resultset.getInt("cod_disciplina"));
+            	disciplina.setCarga_horaria(resultset.getInt("carga_horaria"));
+            	disciplina.setPeriodo_disciplina(resultset.getInt("periodo_disciplina"));
+            	listaDisciplina.add(disciplina);
             }
             conn.close();
             

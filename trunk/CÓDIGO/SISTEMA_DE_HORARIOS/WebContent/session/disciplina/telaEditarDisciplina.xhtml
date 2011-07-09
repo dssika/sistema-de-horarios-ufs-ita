@@ -2,7 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" 
       xmlns:ui="http://java.sun.com/jsf/facelets" 
       xmlns:h="http://java.sun.com/jsf/html" 
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich">
+	
 
    <ui:composition template="/template/template.xhtml">
    	   	<ui:define name="content">
@@ -22,8 +25,16 @@
    		<!--Conteúdo Principal-->
    		<h:form>
 		<h:outputText value="Selecione uma Disciplina: " />
-		<h:selectOneMenu>
-			<f:selectItems value="#{manterDisciplinaBean.disciplinas}" />
+		
+		
+		<!--<rich:autocomplete mode="cachedAjax" minChars="0"
+            autocompleteMethod="#{manterDisciplinaBean.disciplinas}" /> -->
+	
+		
+	
+			
+		<h:selectOneMenu >
+			<f:selectItems value="#{manterDisciplinaBean.disciplinas}"  var="item" itemLabel="#{item.nome}" />
 		</h:selectOneMenu>
 		
 			<h:panelGrid columns="2">
@@ -32,20 +43,24 @@
 				</f:facet>
 				<h:outputText value="Código: " />
 				<h:inputText value="#{manterDisciplinaBean.disciplina.cod_disciplina}" />
+				
 				<h:outputText value="Nome da Disciplina: " />
 				<h:inputText value="#{manterDisciplinaBean.disciplina.nome}" />
+				
 				<h:outputText value="Carga Horária: " />
 				<h:inputText value="#{manterDisciplinaBean.disciplina.carga_horaria}" />
-				<h:outputText value="Período da Disciplina" />
-				<h:inputText value="#{manterDisciplinaBean.disciplina.periodo_disciplina}" />
 				
+				<h:outputText value="Período da Disciplina" />
+				<h:inputText value="#{manterDisciplinaBean.disciplina.periodo_disciplina}" />	
+		
 				<h:selectOneRadio id="tipo_disciplina" value="#{manterDisciplinaBean.disciplina.tipo_disciplina}">
 				<f:selectItem itemLabel="Obrigatória" itemValue="O" />  <br/>
 			    <f:selectItem itemLabel="Optativa" itemValue="A" />  					
 				</h:selectOneRadio>
 			</h:panelGrid>   
 			<br />	
-			<h:commandButton value="Alterar" action="#{manterDisciplinaBean.confirmar}"/>   		
+			<h:commandButton value="Alterar" action="#{manterDisciplinaBean.confirmar}"/>   
+
    		</h:form>
    	   	</div>	
    	   	</ui:define>
