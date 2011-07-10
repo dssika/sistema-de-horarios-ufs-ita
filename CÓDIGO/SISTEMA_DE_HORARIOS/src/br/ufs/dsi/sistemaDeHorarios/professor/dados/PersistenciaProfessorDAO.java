@@ -20,6 +20,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import com.mysql.jdbc.PreparedStatement;
+
 
 import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 import br.ufs.dsi.sistemaDeHorarios.horario.entidade.HorariosProfessor;
@@ -103,7 +105,7 @@ public class PersistenciaProfessorDAO implements IPersistenciaProfessor {
 		buscaProfessor.setSenha(professor.getSenha());
 		buscaProfessor.setTelefone(professor.getTelefone());
 		buscaProfessor.setArea(professor.getArea());
-		buscaProfessor.setCoordenador(professor.getCoordenador());
+		buscaProfessor.setCordenador(professor.getCordenador());
 		buscaProfessor.setEmail(professor.getEmail());
 	}
 
@@ -116,5 +118,22 @@ public class PersistenciaProfessorDAO implements IPersistenciaProfessor {
 	public List<Professor> buscarTodos() {
 		Query query = manager.createQuery("select * from tb_professor");
         return  query.getResultList();
+	}
+	
+	
+	@Override
+	public String autenticar(String login, String senha){
+		System.out.println("Login: "+login+ " = Senha: "+senha);
+		try{
+			Query query = manager.createNativeQuery("SELECT cordenador FROM sistema_horarios.tb_professor tp"+
+					" WHERE tp.LOGIN = '"+login+"' and tp.senha = '"+senha+"'");
+			String resultado = query.getSingleResult().toString();
+			System.out.println("Resultado: "+resultado);
+			if(resultado.equals("S") || resultado.equals("N"))
+				return "sucesso";				
+		}catch(Exception e){
+			System.out.println(e + " - Não pode encontrar o usuário: '"+login+"'");
+		}
+		return "falha";
 	}
 }

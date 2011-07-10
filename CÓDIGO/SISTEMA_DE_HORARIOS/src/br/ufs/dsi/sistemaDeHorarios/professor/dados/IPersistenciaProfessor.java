@@ -26,4 +26,6 @@ public interface IPersistenciaProfessor extends DaoGenerico<Professor, Integer>{
 
 	public abstract void gravarValidacao(HorariosProfessor horario);
 
+	public String autenticar(String login, String senha);
+
 }

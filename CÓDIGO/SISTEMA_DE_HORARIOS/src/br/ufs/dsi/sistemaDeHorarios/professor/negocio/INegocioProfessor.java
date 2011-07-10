@@ -10,4 +10,6 @@ public interface INegocioProfessor {
 
 	public abstract void excluir(Professor professor);
 
+	public String autenticar(String login, String senha);
+
 }
