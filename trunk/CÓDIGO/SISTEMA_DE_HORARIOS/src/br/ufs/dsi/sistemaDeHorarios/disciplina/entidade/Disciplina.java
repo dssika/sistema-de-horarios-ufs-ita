@@ -5,7 +5,7 @@
 //  @ Project :  SISTEMA DE HORÁRIOS
 //  @ File Name : Disciplina.java
 //  @ Date : 13/05/2011
-//  @ Author : @
+//  @ Author : @Igor Peterson
 //
 //
 

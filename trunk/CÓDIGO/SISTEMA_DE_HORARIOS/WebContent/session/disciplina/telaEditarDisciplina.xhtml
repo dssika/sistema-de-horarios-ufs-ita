@@ -26,8 +26,8 @@
    		<h:form>
 		
 		<h:outputLabel value="Selecione uma Disciplina: " for="nomeDisciplina"/>
-		<h:selectOneMenu id="nomeDisciplina" value="#{manterDisciplinaBean.nome}" onchange="this.form.submit();" valueChangeListener="#{manterDisciplinaBean.mudar}">
-			<f:selectItems value="#{manterDisciplinaBean.disciplinas}"  var="item" itemLabel="#{item.nome}" itemValue="item.nome"/>					
+		<h:selectOneMenu >
+			<f:selectItems value="#{manterDisciplinaBean.disciplinas}"  var="item" />					
 		</h:selectOneMenu>
 		
 			<h:panelGrid columns="2">

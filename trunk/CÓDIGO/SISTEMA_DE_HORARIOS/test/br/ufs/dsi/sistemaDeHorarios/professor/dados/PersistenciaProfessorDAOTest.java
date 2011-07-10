@@ -33,7 +33,7 @@ public class PersistenciaProfessorDAOTest {
 		professor.setTelefone("3344-5566");
 		professor.setEmail("maily@ufs.br");
 		professor.setArea("ED1");
-		professor.setCoordenador('N');
+		professor.setCordenador('N');
 	}
 
 	/**
@@ -74,7 +74,7 @@ public class PersistenciaProfessorDAOTest {
 		assertEquals(professor.getTelefone(), professorConsulta.getTelefone());
 		assertEquals(professor.getEmail(), professorConsulta.getEmail());
 		assertEquals(professor.getArea(), professorConsulta.getArea());
-		assertEquals(professor.getCoordenador(), professorConsulta.getCoordenador());
+		assertEquals(professor.getCordenador(), professorConsulta.getCordenador());
 				
 	}
 
@@ -113,7 +113,7 @@ public class PersistenciaProfessorDAOTest {
 		assertEquals(professor.getEmail(), professorTeste.getEmail());
 		assertEquals(professor.getTelefone(), professorTeste.getTelefone());
 		assertEquals(professor.getArea(), professorTeste.getArea());
-		assertEquals(professor.getCoordenador(), professorTeste.getCoordenador());
+		assertEquals(professor.getCordenador(), professorTeste.getCordenador());
 	}
 	
 	

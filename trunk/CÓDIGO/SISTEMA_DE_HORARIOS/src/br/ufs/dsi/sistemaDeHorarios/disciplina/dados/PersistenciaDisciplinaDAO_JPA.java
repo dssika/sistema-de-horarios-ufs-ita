@@ -14,6 +14,7 @@
 package br.ufs.dsi.sistemaDeHorarios.disciplina.dados;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -84,16 +85,19 @@ public class PersistenciaDisciplinaDAO_JPA implements IPersistenciaDisciplinaJDB
 		return null;
 	}
 
-	@Override
-	public List<Disciplina> visualizarDisciplina() {
-		Query query = manager.createQuery("select * from tb_disciplina");
-        return  query.getResultList();
-	}
 
 
 	@Override
-	public Disciplina visualizarDisciplina(Disciplina disciplina) {
-		return disciplina;
+	public List<Disciplina> visualizarDisciplina() {		
+		List<Disciplina> listarDisciplina = new ArrayList<Disciplina>();        
+		try{
+			Query query = manager.createNativeQuery("select * FROM tb_disciplina order by nome");
+			listarDisciplina = query.getResultList();
+			return listarDisciplina;
+		 }  catch (Exception e) {
+	         System.out.println(e + " = Erro ao buscar as disciplinas");   
+	      }
+		return listarDisciplina;
 	}
 
 }

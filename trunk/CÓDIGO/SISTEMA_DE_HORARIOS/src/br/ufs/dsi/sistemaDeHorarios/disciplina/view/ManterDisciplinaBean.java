@@ -23,6 +23,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
 
 import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
+import br.ufs.dsi.sistemaDeHorarios.disciplina.negocio.INegocioDisciplina;
 import br.ufs.dsi.sistemaDeHorarios.disciplina.negocio.NegocioDisciplina;
 
 @ManagedBean
@@ -31,7 +32,7 @@ public class ManterDisciplinaBean {
 	@ManagedProperty(value="#{disciplina}")
 	private Disciplina disciplina;
 	
-	NegocioDisciplina negocioDisciplina;
+	INegocioDisciplina negocioDisciplina;
 	
 	private String nome;	
 	private List<Disciplina> disciplinas;
@@ -70,7 +71,7 @@ public class ManterDisciplinaBean {
 	
 	public List<Disciplina> visualizarDisciplina(){
 		negocioDisciplina = new NegocioDisciplina();
-		return negocioDisciplina.visualizarDisciplina(disciplina);	
+		return negocioDisciplina.visualizarDisciplina();	
 	}
 
 	public List<Disciplina> getDisciplinas() {
