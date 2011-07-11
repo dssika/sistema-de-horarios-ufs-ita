@@ -93,9 +93,6 @@ public class PersistenciaDisciplinaDAO_JPA implements IPersistenciaDisciplinaJDB
 		try{
 			Query query = manager.createQuery("select d FROM Disciplina as d order by nome");
 			listarDisciplina = query.getResultList();
-			for (Disciplina disciplina : listarDisciplina) {
-				System.out.println(disciplina.getNome());
-			}
 			
 			return listarDisciplina;
 		 }  catch (Exception e) {

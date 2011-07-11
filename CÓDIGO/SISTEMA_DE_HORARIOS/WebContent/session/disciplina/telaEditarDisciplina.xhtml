@@ -31,7 +31,7 @@
 			<!--Conteúdo Principal-->
 			<h:form>
 
-				<h:outputLabel value="Selecione uma Disciplina: " />
+				<h:outputText value="Selecione uma Disciplina: " />
 				<h:selectOneMenu id="disciplina"
 					value="#{manterDisciplinaBean.disciplina}"
 					valueChangeListener="#{manterDisciplinaBean.mudar}">
@@ -39,27 +39,24 @@
 						var="disc" itemLabel="#{disc.nome}" itemValue="#{disc}" />
 				</h:selectOneMenu>
 				
-				<h:commandButton value="Editar" >
-					<f:setPropertyActionListener target="#{manterDisciplinaBean.disciplina}" value="#{disc}" />
-				</h:commandButton>
-		
+				<h:commandButton value="Editar" action="#{manterDisciplinaBean.mostrarDisciplinaSelecionada}"/>
+
 				<h:panelGrid columns="2">
 					<f:facet name="header">
 						<h:outputText value="Editar Disciplina" />
 					</f:facet>
 					<h:outputText value="Código: " />
-					<h:outputText
-						value="#{disc.cod_disciplina}" />
+					<h:inputText value="#{disc.cod_disciplina}" />
 
 					<h:outputText value="Nome da Disciplina: " />
-					<h:outputText value="#{disc.nome}" />
+					<h:inputText value="#{manterDisciplinaBean.disciplina.nome}" />
 
 					<h:outputText value="Carga Horária: " />
-					<h:outputText
+					<h:inputText
 						value="#{manterDisciplinaBean.disciplina.carga_horaria}" />
 
 					<h:outputText value="Período da Disciplina" />
-					<h:outputText
+					<h:inputText
 						value="#{manterDisciplinaBean.disciplina.periodo_disciplina}" />
 
 					<h:selectOneRadio id="tipo_disciplina"

@@ -16,10 +16,14 @@
    		<h:form>
 			<h:panelGrid columns="2">
 				<f:facet name="header">
-					<h:outputText value="Seus dados pessoais">
-						<f:selectItem itemLabel="Professor 1" itemValue="#{manterProfessorBean.professor.nome}"/>
-					</h:outputText>
+					<h:selectOneMenu id="disciplina"
+					value="#{manterProfessorBean.disciplina}"
+					valueChangeListener="#{manterProfessorBean.mudar}">
+					<f:selectItems value="#{manterProfessorBean.disciplinas}"
+						var="prof" itemLabel="#{prof.nome}" itemValue="#{prof}" />
+				</h:selectOneMenu>
 				</f:facet>	
+				<br/>
 				<h:outputText value="Nome: " />
 				<h:inputText value="#{manterProfessorBean.professor.nome}" />
 				<h:outputText value="Matrícula: " />
