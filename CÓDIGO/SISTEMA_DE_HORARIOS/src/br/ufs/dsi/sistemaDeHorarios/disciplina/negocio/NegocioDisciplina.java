@@ -15,7 +15,7 @@ public class NegocioDisciplina implements INegocioDisciplina {
 	
 	public NegocioDisciplina(){
 		persistenciaDisciplina = new PersistenciaDisciplinaDAO_JPA() ;
-		persistenciaDisciplinaJdbc = new PersistenciaDisciplinaDAO_JDBC();
+		//persistenciaDisciplinaJdbc = new PersistenciaDisciplinaDAO_JDBC();
 	}
 	
 	/* (non-Javadoc)

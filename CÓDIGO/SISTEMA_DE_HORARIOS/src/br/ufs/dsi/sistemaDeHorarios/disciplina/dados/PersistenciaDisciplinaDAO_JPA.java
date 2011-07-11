@@ -91,8 +91,12 @@ public class PersistenciaDisciplinaDAO_JPA implements IPersistenciaDisciplinaJDB
 	public List<Disciplina> visualizarDisciplina() {		
 		List<Disciplina> listarDisciplina = new ArrayList<Disciplina>();        
 		try{
-			Query query = manager.createNativeQuery("select * FROM tb_disciplina order by nome");
+			Query query = manager.createQuery("select d FROM Disciplina as d order by nome");
 			listarDisciplina = query.getResultList();
+			for (Disciplina disciplina : listarDisciplina) {
+				System.out.println(disciplina.getNome());
+			}
+			
 			return listarDisciplina;
 		 }  catch (Exception e) {
 	         System.out.println(e + " = Erro ao buscar as disciplinas");   

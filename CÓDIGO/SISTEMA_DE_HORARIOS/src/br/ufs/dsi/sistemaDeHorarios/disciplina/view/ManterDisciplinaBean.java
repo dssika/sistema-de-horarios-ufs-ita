@@ -33,8 +33,6 @@ public class ManterDisciplinaBean {
 	private Disciplina disciplina;
 	
 	INegocioDisciplina negocioDisciplina;
-	
-	private String nome;	
 	private List<Disciplina> disciplinas;
 	
 	
@@ -71,7 +69,11 @@ public class ManterDisciplinaBean {
 	
 	public List<Disciplina> visualizarDisciplina(){
 		negocioDisciplina = new NegocioDisciplina();
-		return negocioDisciplina.visualizarDisciplina();	
+		List<Disciplina> disciplinas = negocioDisciplina.visualizarDisciplina();
+		for (Disciplina disciplina : disciplinas) {
+			System.out.println(disciplina.getNome());
+		}
+		return disciplinas;
 	}
 
 	public List<Disciplina> getDisciplinas() {
@@ -84,19 +86,10 @@ public class ManterDisciplinaBean {
 
 	
 	public void mudar(ValueChangeEvent e){
-		this.nome = e.getNewValue().toString();
-		for(Disciplina d : this.disciplinas){
-			if(d.getNome().equals(nome))
-				disciplina = d;
-		}
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
+		Disciplina d = (Disciplina) e.getNewValue();
+		System.out.println("Setou a disciplina");
+		System.out.println(disciplina.getNome());
+		setDisciplina(d);
 	}
 
 }

@@ -22,8 +22,13 @@
    		<!--Conteúdo Principal-->
    		<h:form>
    		<h:outputText value="Selecione uma Disciplina: " />
-		<h:selectOneMenu value="Selecione..">				
-		</h:selectOneMenu >
+		<h:selectOneMenu id="disciplina"
+					value="#{manterDisciplinaBean.disciplina}"
+					valueChangeListener="#{manterDisciplinaBean.mudar}">
+					<f:selectItems value="#{manterDisciplinaBean.disciplinas}"
+						var="disc" itemLabel="#{disc.nome}" itemValue="#{disc}" />
+		</h:selectOneMenu>
+				
 			<h:panelGrid columns="2">	
 				<f:facet name="header">
 					<h:outputText value="Excluir Disciplina" />
