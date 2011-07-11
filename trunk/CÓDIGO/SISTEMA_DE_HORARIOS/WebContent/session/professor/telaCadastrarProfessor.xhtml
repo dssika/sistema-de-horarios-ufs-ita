@@ -51,10 +51,14 @@
                 <rich:message for="email" ajaxRendered="true"/>
 				
 				<h:outputText value="Área: " />
-				<h:inputText value="#{manterProfessorBean.professor.area}" id="area" validatorMessage="Tamanho max. 20 caract." required="true">
-                    <f:validateLength minimum="5" maximum="20"/>
-                </h:inputText>
-                <rich:message for="area" ajaxRendered="true"/>
+				<h:selectOneMenu id="cidade" value="#{manterProfessorBean.professor.area}">
+            		 <f:selectItem itemValue="Engenharia de Software" itemLabel="Engenharia de Software" />
+           			 <f:selectItem itemValue="Programação" itemLabel="Programação" />
+           			 <f:selectItem itemValue="Redes" itemLabel="Redes" />
+           			 <f:selectItem itemValue="Inteligência Artificial" itemLabel="Inteligência Artificial" />
+           			 <f:selectItem itemValue="Banco de Dados" itemLabel="Banco de Dados" />
+          		</h:selectOneMenu>
+          		<h:outputText value="" />
 												
 				<h:outputText value="Login: " />
 				<h:inputText value="#{manterProfessorBean.professor.login}" id="login" validatorMessage="Tamanho max. 10 caract." required="true">
