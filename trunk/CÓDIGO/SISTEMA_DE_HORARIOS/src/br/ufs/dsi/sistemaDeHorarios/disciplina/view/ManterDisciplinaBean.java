@@ -35,6 +35,9 @@ public class ManterDisciplinaBean {
 	INegocioDisciplina negocioDisciplina;
 	private List<Disciplina> disciplinas;
 	
+	public ManterDisciplinaBean(){
+		negocioDisciplina = new NegocioDisciplina();
+	}
 	
 	public String confirmar(){
 		return "sucesso";
@@ -52,24 +55,20 @@ public class ManterDisciplinaBean {
 		this.disciplina = disciplina;
 	}
 	
-	public void gravar(){
-		negocioDisciplina = new NegocioDisciplina();
+	public void gravar(){		
 		negocioDisciplina.gravar(disciplina);
 	}
 	
 	public void editar(){
-		negocioDisciplina = new NegocioDisciplina();
 		negocioDisciplina.editar(disciplina);		
 	}
 	
 	public void excluir(){
-		negocioDisciplina = new NegocioDisciplina();
 		negocioDisciplina.excluir(disciplina);		
 	}
 	
 	public List<Disciplina> visualizarDisciplina(){
-		negocioDisciplina = new NegocioDisciplina();
-		List<Disciplina> disciplinas = negocioDisciplina.visualizarDisciplina();
+		disciplinas = negocioDisciplina.visualizarDisciplina();
 		for (Disciplina disciplina : disciplinas) {
 			System.out.println(disciplina.getNome());
 		}
@@ -78,10 +77,6 @@ public class ManterDisciplinaBean {
 
 	public List<Disciplina> getDisciplinas() {
 		return visualizarDisciplina();
-	}
-
-	public void setDisciplinas(List<Disciplina> disciplinas) {
-		this.disciplinas = disciplinas;
 	}
 
 	

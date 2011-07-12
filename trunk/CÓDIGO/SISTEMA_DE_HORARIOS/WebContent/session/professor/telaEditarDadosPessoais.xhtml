@@ -2,7 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" 
       xmlns:ui="http://java.sun.com/jsf/facelets" 
       xmlns:h="http://java.sun.com/jsf/html" 
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:rich="http://richfaces.org/rich">
+      
 
    
       <ui:composition template="/template/template.xhtml">
@@ -14,33 +16,39 @@
    	   	
    	   	<!--Conteúdo Principal-->
    		<h:form>
-			<h:panelGrid columns="2">
+			<rich:panel >
 				<f:facet name="header">
-					<h:selectOneMenu id="disciplina"
-					value="#{manterProfessorBean.disciplina}"
-					valueChangeListener="#{manterProfessorBean.mudar}">
-					<f:selectItems value="#{manterProfessorBean.disciplinas}"
-						var="prof" itemLabel="#{prof.nome}" itemValue="#{prof}" />
-				</h:selectOneMenu>
-				</f:facet>	
+	                <h:outputText value="Selecionar Professor"></h:outputText>
+	            </f:facet>
+
+				<rich:select value="#{materProfessorBean.professor}">
+					<f:selectItems value="#{materProfessorBean.professores}" var="prof" itemLabel="prof.nome"/>
+				</rich:select>
+				
 				<br/>
 				<h:outputText value="Nome: " />
 				<h:inputText value="#{manterProfessorBean.professor.nome}" />
+				<br/>
 				<h:outputText value="Matrícula: " />
 				<h:inputText value="#{manterProfessorBean.professor.matricula}" />
+				<br/>
 				<h:outputText value="Telefone: " />
 				<h:inputText value="#{manterProfessorBean.professor.telefone}" />
+				<br/>
 				<h:outputText value="E-mail: " />
 				<h:inputText value="#{manterProfessorBean.professor.email}" />
+				<br/>
 				<h:outputText value="Área: " />
 				<h:selectOneMenu value="#{manterProfessorBean.professor.area}">	
-					<f:selectItem itemLabel="Área 1" itemValue="#{manterProfessorBean.professor.area}"/>			
+					<f:selectItem itemLabel="Área 1" />			
 				</h:selectOneMenu >		
+				<br/>
 				<h:outputText value="Login: " />
 				<h:inputText value="#{manterProfessorBean.professor.login}" />
+				<br/>
 				<h:outputText value="Senha: " />
 				<h:inputText value="#{manterProfessorBean.professor.senha}" />					
-			</h:panelGrid>  
+			</rich:panel>
 			
 			<h:commandButton value="Alterar" action="#{manterProfessorBean.confirmar}"/>   		
    		</h:form>

@@ -1,6 +1,8 @@
 package br.ufs.dsi.sistemaDeHorarios.professor.negocio;
 
 
+import java.util.List;
+
 import br.ufs.dsi.sistemaDeHorarios.professor.dados.IPersistenciaProfessor;
 import br.ufs.dsi.sistemaDeHorarios.professor.dados.PersistenciaProfessorDAO;
 import br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor;
@@ -40,6 +42,11 @@ public class NegocioProfessor implements INegocioProfessor {
 	public String autenticar(String login, String senha) {
 		String result= persistenciaProfessor.autenticar(login, senha);
 		return result;
+	}
+	
+	@Override
+	public List<Professor> visualizarProfessores(){
+		return persistenciaProfessor.visualizarProfessores();
 	}
 	
 	

@@ -1,5 +1,7 @@
 package br.ufs.dsi.sistemaDeHorarios.professor.negocio;
 
+import java.util.List;
+
 import br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor;
 
 public interface INegocioProfessor {
@@ -10,6 +12,8 @@ public interface INegocioProfessor {
 
 	public abstract void excluir(Professor professor);
 
-	public String autenticar(String login, String senha);
+	public abstract String autenticar(String login, String senha);
+
+	public abstract List<Professor> visualizarProfessores();
 
 }

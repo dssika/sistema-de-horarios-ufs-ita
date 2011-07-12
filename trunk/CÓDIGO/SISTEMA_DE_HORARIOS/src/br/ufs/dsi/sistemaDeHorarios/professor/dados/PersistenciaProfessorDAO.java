@@ -13,15 +13,13 @@
 
 package br.ufs.dsi.sistemaDeHorarios.professor.dados;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-
-import com.mysql.jdbc.PreparedStatement;
-
 
 import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 import br.ufs.dsi.sistemaDeHorarios.horario.entidade.HorariosProfessor;
@@ -32,9 +30,9 @@ public class PersistenciaProfessorDAO implements IPersistenciaProfessor {
 	/* (non-Javadoc)
 	 * @see br.ufs.dsi.sistemaDeHorarios.professor.dados.IPersistenciaProfessor#gravar(br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor)
 	 */
-	
+	Professor prof = new Professor();
 	EntityManager manager;
-
+	
 	
 	public PersistenciaProfessorDAO(){
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("SISTEMA_DE_HORARIOS");
@@ -62,17 +60,7 @@ public class PersistenciaProfessorDAO implements IPersistenciaProfessor {
 	}
 
 	
-	
-	/* (non-Javadoc)
-	 * @see br.ufs.dsi.sistemaDeHorarios.professor.dados.IPersistenciaProfessor#visualizarDados(br.ufs.dsi.sistemaDeHorarios.professor.entidade.Professor)
-	 */
-	@Override
-	public Professor visualizarDados(Professor professor) {
-		return professor;
-		//Professor professorBusca = buscar(professor.getMatricula());
-		//return professorBusca;
-	}
-	
+
 	/* (non-Javadoc)
 	 * @see br.ufs.dsi.sistemaDeHorarios.professor.dados.IPersistenciaProfessor#gravarHorariosPreferenciais(br.ufs.dsi.sistemaDeHorarios.horario.entidade.HorariosProfessor)
 	 */
@@ -113,22 +101,14 @@ public class PersistenciaProfessorDAO implements IPersistenciaProfessor {
 	public Professor buscar(Integer idProfessor) {
 		 return manager.find(Professor.class, idProfessor);
 	}
-
-	@Override
-	public List<Professor> buscarTodos() {
-		Query query = manager.createQuery("select * from tb_professor");
-        return  query.getResultList();
-	}
 	
 	
 	@Override
 	public String autenticar(String login, String senha){
-		System.out.println("Login: "+login+ " = Senha: "+senha);
 		try{
 			Query query = manager.createNativeQuery("SELECT cordenador FROM sistema_horarios.tb_professor tp"+
 					" WHERE tp.LOGIN = '"+login+"' and tp.senha = '"+senha+"'");
 			String resultado = query.getSingleResult().toString();
-			System.out.println("Resultado: "+resultado);
 			if(resultado.equals("S") || resultado.equals("N"))
 				return "sucesso";				
 		}catch(Exception e){
@@ -136,4 +116,25 @@ public class PersistenciaProfessorDAO implements IPersistenciaProfessor {
 		}
 		return "falha";
 	}
+	
+	@Override
+	public List<Professor> visualizarProfessores(){
+		List<Professor> listarProfessor = new ArrayList<Professor>();        
+		try{
+			Query query = manager.createQuery("select p FROM Professor as p order by nome");
+			listarProfessor = query.getResultList();
+
+			for (Professor professor : listarProfessor) {
+				System.out.println(professor.getNome());
+			}
+			return listarProfessor;
+		 }  catch (Exception e) {
+	         System.out.println(e + " = Erro ao buscar as disciplinas");   
+	      }
+		return listarProfessor;
+	}
+
+		
+	
+	
 }
