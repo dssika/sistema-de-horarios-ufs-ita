@@ -47,6 +47,6 @@ public class NegocioDisciplina implements INegocioDisciplina {
 	 */
 	@Override
 	public List<Disciplina> visualizarDisciplina(){
-		return (List<Disciplina>) persistenciaDisciplina.visualizarDisciplina();
+		return persistenciaDisciplina.visualizarDisciplina();
 	}
 }

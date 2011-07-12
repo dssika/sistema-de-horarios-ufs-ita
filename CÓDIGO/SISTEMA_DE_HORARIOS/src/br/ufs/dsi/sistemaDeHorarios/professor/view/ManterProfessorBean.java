@@ -13,6 +13,8 @@
 
 package br.ufs.dsi.sistemaDeHorarios.professor.view;
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
@@ -28,13 +30,30 @@ public class ManterProfessorBean
 {
 	@ManagedProperty(value="#{professor}")
 	private Professor professor;
+	
 	INegocioProfessor professorNegocio;
+	private List<Professor> professores;
 	
 	private String login;
 	private String senha;
 	
 	public ManterProfessorBean(){
 		professorNegocio = new NegocioProfessor();
+	}
+	
+	public List<Professor> getProfessores() {
+		return visualizarProfessores();
+	}	
+	
+	public List<Professor> visualizarProfessores(){
+		
+		professores = professorNegocio.visualizarProfessores();
+				
+		for (Professor professor : professores) {
+			System.out.println(professor.getNome());
+		  }
+		
+		return professores;		
 	}
 	
 	public void gravar() {				

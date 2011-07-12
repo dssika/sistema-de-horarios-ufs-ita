@@ -98,15 +98,15 @@ public class Professor {
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
-	}
-	
-	
+	}	
+
 	public Collection<Disciplina> getDisciplinas() {
 		return disciplinas;
 	}
 	public void setDisciplinas(Collection<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
 	}
+	
 	public char getCordenador() {
 		return cordenador;
 	}
