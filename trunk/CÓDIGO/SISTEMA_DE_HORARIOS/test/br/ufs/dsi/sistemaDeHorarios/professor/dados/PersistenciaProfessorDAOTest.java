@@ -67,7 +67,7 @@ public class PersistenciaProfessorDAOTest {
 		
 		persistenciaProfessor.gravar(professor);
 		
-		Professor professorConsulta = persistenciaProfessor.visualizarDados(professor);
+		Professor professorConsulta = persistenciaProfessor.buscar(professor);
 		
 		assertEquals(professor.getNome(), professorConsulta.getNome());
 		assertEquals(professor.getMatricula(), professorConsulta.getMatricula());
@@ -86,7 +86,7 @@ public class PersistenciaProfessorDAOTest {
 	@Test
 	public void testEditar() {
 		persistenciaProfessor.editar(professor);
-		assertEquals(professor, persistenciaProfessor.visualizarDados(professor));
+		assertEquals(professor, persistenciaProfessor.buscar(professor));
 	}
 	
 	/**
@@ -95,7 +95,7 @@ public class PersistenciaProfessorDAOTest {
 	@Test
 	public void testExcluir() {
 		persistenciaProfessor.excluir(professor);
-		assertEquals(professor, persistenciaProfessor.visualizarDados(professor));
+		assertEquals(professor, persistenciaProfessor.buscar(professor));
 	}
 
 
@@ -106,7 +106,7 @@ public class PersistenciaProfessorDAOTest {
 	public void testVisualizarDados() {
 		professor = new Professor();
 		
-		persistenciaProfessor.visualizarDados(professor);
+		persistenciaProfessor.buscar(professor);
 		Professor professorTeste = new Professor();
 		assertEquals(professor.getNome(), professorTeste.getNome());
 		assertEquals(professor.getMatricula(), professorTeste.getMatricula());

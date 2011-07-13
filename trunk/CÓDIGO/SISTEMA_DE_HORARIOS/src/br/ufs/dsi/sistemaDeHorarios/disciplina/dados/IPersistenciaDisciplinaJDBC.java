@@ -5,7 +5,7 @@ import java.util.List;
 import br.ufs.dsi.sistemaDeHorarios.arquitetura.dados.DaoGenerico;
 import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 
-public interface IPersistenciaDisciplinaJDBC extends DaoGenerico<Disciplina, Integer> {
+public interface IPersistenciaDisciplinaJDBC {
 	
 	void gravar(Disciplina disciplina);
  
@@ -13,5 +13,7 @@ public interface IPersistenciaDisciplinaJDBC extends DaoGenerico<Disciplina, Int
 
 	void excluir(Disciplina disciplina);
 
-	List<Disciplina> visualizarDisciplina();
+	public List<Disciplina> visualizarDisciplina();
+
+	public Disciplina buscar(Disciplina disciplina);
 }

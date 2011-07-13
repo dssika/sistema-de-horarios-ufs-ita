@@ -134,7 +134,10 @@ public class PersistenciaProfessorDAO implements IPersistenciaProfessor {
 		return listarProfessor;
 	}
 
+	@Override	
+	public Professor buscar(Professor professor){
+		return professor;
 		
-	
+	}
 	
 }
