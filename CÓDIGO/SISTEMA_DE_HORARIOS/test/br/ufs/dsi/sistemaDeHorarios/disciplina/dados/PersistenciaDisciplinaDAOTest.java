@@ -21,13 +21,19 @@ import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 public class PersistenciaDisciplinaDAOTest {
 
 	IPersistenciaDisciplinaJDBC persistenciaDisciplina;
-	Disciplina disciplina;
+	static Disciplina disciplina;
 	
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		disciplina = new Disciplina();
+		disciplina.setNome("Engenharia de Software 2");
+		disciplina.setCod_disciplina(01221);
+		disciplina.setCarga_horaria(4);
+		disciplina.setPeriodo_disciplina(6);
+		disciplina.setTipo_disciplina('A');
 	}
 
 	/**
@@ -58,15 +64,10 @@ public class PersistenciaDisciplinaDAOTest {
 	 */
 	@Test
 	public void testGravar() {
-		disciplina.setNome("Engenharia de Software 2");
-		disciplina.setCod_disciplina(01221);
-		disciplina.setCarga_horaria(4);
-		disciplina.setPeriodo_disciplina(6);
-		disciplina.setTipo_disciplina('A');
-		
+				
 		persistenciaDisciplina.gravar(disciplina);
 		
-		Disciplina disciplinaConsulta = persistenciaDisciplina.visualizarDisciplina(disciplina);
+		Disciplina disciplinaConsulta = persistenciaDisciplina.buscar(disciplina);
 		
 		assertEquals(disciplinaConsulta.getNome(), disciplina.getNome());
 		assertEquals(disciplinaConsulta.getCod_disciplina(), disciplina.getCod_disciplina());
@@ -81,7 +82,7 @@ public class PersistenciaDisciplinaDAOTest {
 	@Test
 	public void testEditar() {
 		persistenciaDisciplina.editar(disciplina);
-		assertEquals(disciplina, persistenciaDisciplina.visualizarDisciplina(disciplina));
+		assertEquals(disciplina, persistenciaDisciplina.buscar(disciplina));
 	}
 
 	/**
@@ -90,7 +91,7 @@ public class PersistenciaDisciplinaDAOTest {
 	@Test
 	public void testExcluir() {
 		persistenciaDisciplina.excluir(disciplina);
-		assertEquals(disciplina, persistenciaDisciplina.visualizarDisciplina(disciplina));
+		assertEquals(disciplina, persistenciaDisciplina.buscar(disciplina));
 	}
 
 
@@ -99,7 +100,7 @@ public class PersistenciaDisciplinaDAOTest {
 	 */
 	@Test
 	public void testVisualizarDados() {
-		persistenciaDisciplina.visualizarDisciplina(disciplina);
+		persistenciaDisciplina.buscar(disciplina);
 		Disciplina disciplinaTeste = new Disciplina();
 		assertEquals(disciplina.getNome(), disciplinaTeste.getNome());
 		assertEquals(disciplina.getCarga_horaria(), disciplinaTeste.getCarga_horaria());

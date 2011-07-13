@@ -178,16 +178,10 @@ public class PersistenciaDisciplinaDAO_JDBC implements IPersistenciaDisciplinaJD
         return listaDisciplina;		
 	}
 
-	@Override
-	public Disciplina buscar(Integer primaryKey) {
-		// TODO Auto-generated method stub
-		return null;
+
+	public Disciplina buscar(Disciplina disciplina) {		
+		return disciplina;
 	}
 
-	@Override
-	public List<Disciplina> buscarTodos() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

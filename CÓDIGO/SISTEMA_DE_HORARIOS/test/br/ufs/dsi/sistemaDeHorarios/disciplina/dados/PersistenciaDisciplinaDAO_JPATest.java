@@ -17,8 +17,8 @@ public class PersistenciaDisciplinaDAO_JPATest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		disciplina = new Disciplina();
-		disciplina.setCod_disciplina(67671);
-		disciplina.setNome("Engenharia de Software");
+		disciplina.setCod_disciplina(67);
+		disciplina.setNome("Engenharia Software");
 		disciplina.setCarga_horaria(6);
 		disciplina.setPeriodo_disciplina(6);
 		disciplina.setTipo_disciplina('A');
@@ -37,12 +37,11 @@ public class PersistenciaDisciplinaDAO_JPATest {
 	public void tearDown() throws Exception {
 	}
 
-
 	@Test
 	public void testGravar() {
 		persistenciaDisciplina.gravar(disciplina);
 		
-		Disciplina disciplinaConsulta = persistenciaDisciplina.visualizarDisciplina(disciplina);
+		Disciplina disciplinaConsulta = persistenciaDisciplina.buscarDisciplina(disciplina);
 
 		assertEquals(disciplina.getCod_disciplina(), disciplinaConsulta.getCod_disciplina());
 		assertEquals(disciplina.getNome(), disciplinaConsulta.getNome());
@@ -50,17 +49,17 @@ public class PersistenciaDisciplinaDAO_JPATest {
 		assertEquals(disciplina.getTipo_disciplina(), disciplinaConsulta.getTipo_disciplina());
 		assertEquals(disciplina.getCarga_horaria(), disciplinaConsulta.getCarga_horaria());
 	}
-
+	
 	@Test
 	public void testEditar() {
 		persistenciaDisciplina.editar(disciplina);
-		assertEquals(disciplina, persistenciaDisciplina.visualizarDisciplina(disciplina));
+		assertEquals(disciplina, persistenciaDisciplina.buscarDisciplina(disciplina));
 	}
-
+	
 	@Test
 	public void testExcluir() {
 		persistenciaDisciplina.excluir(disciplina);
-		assertEquals(disciplina, persistenciaDisciplina.visualizarDisciplina(disciplina));
+		assertEquals(disciplina, persistenciaDisciplina.buscarDisciplina(disciplina));
 	}
 
 	@Test
@@ -68,10 +67,6 @@ public class PersistenciaDisciplinaDAO_JPATest {
 		fail("Not yet implemented");
 	}
 
-	@Test
-	public void testBuscarTodos() {
-		fail("Not yet implemented");
-	}
 
 	@Test
 	public void testVisualizarDisciplina() {

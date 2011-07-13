@@ -11,9 +11,11 @@ public interface IPersistenciaDisciplinaDaoJPA {
 	public abstract void editar(Disciplina disciplina);
 
 	public abstract void excluir(Disciplina disciplina);
-
-	public abstract List<Disciplina> buscarTodos();
 	
 	public abstract List<Disciplina> visualizarDisciplina();
+
+	public abstract Disciplina buscar(Integer codDisciplina);
+
+	public abstract Disciplina buscarDisciplina(Disciplina disciplina);
 
 }

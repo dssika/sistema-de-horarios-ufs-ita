@@ -25,7 +25,7 @@ import javax.persistence.Query;
 import br.ufs.dsi.sistemaDeHorarios.disciplina.entidade.Disciplina;
 
 
-public class PersistenciaDisciplinaDAO_JPA implements IPersistenciaDisciplinaJDBC, IPersistenciaDisciplinaDaoJPA {
+public class PersistenciaDisciplinaDAO_JPA implements IPersistenciaDisciplinaDaoJPA {
 	
 	EntityManager manager;
 	
@@ -76,16 +76,6 @@ public class PersistenciaDisciplinaDAO_JPA implements IPersistenciaDisciplinaJDB
 		return manager.find(Disciplina.class, codDisciplina);
 	}
 
-	/* (non-Javadoc)
-	 * @see br.ufs.dsi.sistemaDeHorarios.disciplina.dados.IPersistenciaDisciplinaDaoJPA#buscarTodos()
-	 */
-	@Override
-	public List<Disciplina> buscarTodos() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
 
 	@Override
 	public List<Disciplina> visualizarDisciplina() {		
@@ -101,4 +91,8 @@ public class PersistenciaDisciplinaDAO_JPA implements IPersistenciaDisciplinaJDB
 		return listarDisciplina;
 	}
 
+	@Override
+	public Disciplina buscarDisciplina(Disciplina disciplina){
+		return disciplina;
+	}
 }

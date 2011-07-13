@@ -27,6 +27,8 @@ public interface IPersistenciaProfessor{
 
 	public abstract void gravarValidacao(HorariosProfessor horario);
 
+	public abstract Professor buscar(Professor professor);
+
 
 
 }
