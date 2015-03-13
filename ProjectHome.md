@@ -1,0 +1,1 @@
+Este ambiente servirá para a gerência de configuração do software de Sistema de Horários, realizado pelos alunos: Igor Peterson e Jessica
